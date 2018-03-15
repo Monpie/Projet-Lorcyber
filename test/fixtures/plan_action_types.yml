@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  descriptif: MyText
+  liste_action: MyString
+  temps: 2018-03-14 14:21:19
+  priorite: MyString
+
+two:
+  type: 
+  descriptif: MyText
+  liste_action: MyString
+  temps: 2018-03-14 14:21:19
+  priorite: MyString

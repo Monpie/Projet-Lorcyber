@@ -1,0 +1,2 @@
+class Anomalie < ApplicationRecord
+end

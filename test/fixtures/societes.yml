@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nom: MyString
+  referent_technique: MyString
+  client: one
+  anomalie: one
+
+two:
+  nom: MyString
+  referent_technique: MyString
+  client: two
+  anomalie: two

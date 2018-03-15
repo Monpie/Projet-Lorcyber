@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-03-14 14:29:17
+  descriptif: MyText
+  anomalie: one
+  plan_action_types: one
+
+two:
+  date: 2018-03-14 14:29:17
+  descriptif: MyText
+  anomalie: two
+  plan_action_types: two

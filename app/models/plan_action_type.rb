@@ -1,0 +1,2 @@
+class PlanActionType < ApplicationRecord
+end
