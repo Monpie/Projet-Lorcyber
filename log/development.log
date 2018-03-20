@@ -2304,3 +2304,1399 @@ FOREIGN KEY (`utilisateurs_id`)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT RELEASE_LOCK('6668909700278373240')[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (12.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2018-03-15 13:12:45 +0100
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 533ms (Views: 497.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:12:53 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' LIMIT 11[0m
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.8ms)
+
+
+  
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' LIMIT 11[0m  [["nom", "Admin"], ["password", "admin"], ["LIMIT", 11]]
+NoMethodError (undefined method `nom' for #<ActiveRecord::Relation []>
+Did you mean?  none):
+  
+app/controllers/welcome_controller.rb:9:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:11 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 53ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:22 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 46ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:25 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 45ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 45ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:30 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 44ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:44 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 54ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:13:57 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZJDtkAcBNhVXQVj6woNcMHLad14k0JMcMwhV0oG+tKZTFbsI2Op6ZYZlWE1QsbqOLbePMgT/fSToZTZCHVeP2g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 63ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:14:04 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 52ms (Views: 49.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:14:08 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AXvjTLVKG8BHj9LZ32zsYl5pBx9Emekb7Jj6BtHFMjo2/rXUaqFXsJar0m5NXgrcAQT/c2S2ByM39ZmWTSwJRg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+No template found for WelcomeController#connexion, rendering head :no_content
+Completed 204 No Content in 45ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:14:34 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AXvjTLVKG8BHj9LZ32zsYl5pBx9Emekb7Jj6BtHFMjo2/rXUaqFXsJar0m5NXgrcAQT/c2S2ByM39ZmWTSwJRg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie/index
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie/index" for 127.0.0.1 at 2018-03-15 13:14:34 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/anomalie/index"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:14:59 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AXvjTLVKG8BHj9LZ32zsYl5pBx9Emekb7Jj6BtHFMjo2/rXUaqFXsJar0m5NXgrcAQT/c2S2ByM39ZmWTSwJRg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:14:59 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.2ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:15:05 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 37ms (Views: 34.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:15:10 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pNixN0rPXo52xJfE2Fr3ru6xsfHGXNQDXjBE+B+x4tyTXeevlSQS/qfgl3NKaBEQsdxJneZzOjuFXSdog1jZoA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:15:10 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:15:12 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:15:15 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"q7dib7+r9SQ8/W0svO3twAhBdnTT5nvETYL95jhAod6cMjT3YEC5VO3ZbZsu3wt+VyyOGPPJlfyW7552pKmaog==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:15:15 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:15:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:16:25 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rtxHFn4lb5ouAZeth8HUBaSfb/U92OCXjR2Q28w2ykmZWRGOoc4j6v8llxoV8zK7+/KXmR33Dq9WcPNLUN/xNQ==", "name"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:16:25 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:16:29 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:16:36 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ud2Whn+4ANdsKPjH7TtcfaUl/ORUnX+/n8HZX3U4dm9mWMAeoFNMp70M+HB/CbrD+kgEiHSykYdErLrP6dFNEw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:16:36 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:17:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 38ms (Views: 35.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:17:02 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"toBSGZpUPY7pOVOwszzSiWlLX9JtdMsLfWgjOJmOsBGBBQSBRb9x/jgdUwchDjQ3Nianvk1bJTOmBUCoBWeLbQ==", "name"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:17:02 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.2ms)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 13:17:04 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 13:17:08 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZlsheTxzkIKyyI5lBtQUPXYNlPf6KKmfLze671B6xEJR3nfh45jc8mPsjtKU5vKDKWBsm9oHR6f0Wtl/zJP/Pg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 13:17:08 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.1ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:01 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sMSRB8soVck2dvbpPn9RDOLxk+IzmCpa3MsVy18gCy6HQcefFMMZuedS9l6sTbeyvZxrjhO3xGIHpnZbw8kwUg==", "name"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 14:58:01 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:02 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:17 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UUbUNoUsW4ryJ1whZMkHzXueGar9FznCpX9IAjRX5Ulmw4KuWscX+iMDXJb2++FzJPPhxt041/p+EiuSqL7eNQ==", "name"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-15 14:58:17 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:19 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:21 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJDJrUQA1dccXGJxrgyNgpU/uer60d5HGJXDokh0Ap4jFZ81m+uZp814YsY8Pms8ylJBhtr+MH/D+KAy1J054g==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 5ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:21 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:23 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UWli1MXIKtOitxIQl67QLIidDQEykbUbGviKDf2c4P9m7DRMGiNmo3OTEqcFnDaS1/D1bRK+WyPBlemdYXXbgw==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:23 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArXRv6dZoYEOwhk83OTKFaHMMa0+MFOxTguOJufvLoA1MIcneLLt8d/mGYtO1iyr/qHJwR4fvYmVZu22ewYV/A==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:27 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:32 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ata/ukoWLcyEWQgzPTh8OwB1JX8JjloB9Jz7MQYtuco1U+kilf1hvFV9CISvCpqFXxjdEymhtDkv8ZihmsSCtg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:32 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:56 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IK65KfyCMLoUSo1VAtarHgMLSxyM/PpJgzcPXoopGB0XK++xI2l8ysVujeKQ5E2gXGazcKzTFHFYWmzOFsAjYQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 14:58:56 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-15 15:42:59 +0100
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 110ms (Views: 104.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-15 15:43:06 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BppteGFaSGJkIIMXZ1divLVcec32M4EymD96stGn0bcxHzvgvrEEErUEg6D1ZYQC6jGBodYcbwpDUhkiTU7qyw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-15 15:43:06 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-16 14:11:20 +0100
+  [1m[35m (60.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 246ms (Views: 211.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 08:47:52 +0100
+  [1m[35m (60.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 384ms (Views: 349.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 08:48:00 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JoUN0l/cYxKWkpGOrv/Hgq4Tk2WSDB2Xk4UPHrlCxRI9k5oiWix0AS3RNlRCZ12jZ1VhArGk/RwhzFlznjSjeQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 137ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 08:48:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 29ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:15 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P0cT7OiSeLcbfnvUdABuP1AnwX+RyRlZqKwD8Sue5NckUYQc7WJvpKA93A6YmPQemWEzGLJh+dIa5VWcDOiCvA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `name' for #<Utilisateurs:0x00007f3716195650>):
+  
+app/controllers/welcome_controller.rb:9:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:47 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"P0cT7OiSeLcbfnvUdABuP1AnwX+RyRlZqKwD8Sue5NckUYQc7WJvpKA93A6YmPQemWEzGLJh+dIa5VWcDOiCvA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 08:55:47 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:52 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vV6dFuf8SpvK6wAiXeaYKheNdAh6mT+U+HCBxVHzT1ymSArm4gxdiHGop/ixfgIL3suGb1kx3x9KOdeodoUpNw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'a' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:52 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 08:55:56 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GDeqCxMJPviK3QwCo8hFacgTJIoXiVR0UVRdhxmshL0DIT37Fvkp6zGeq9hPUN9IAVXW7TQhtP/jHQvqPtri1g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 08:55:57 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:04:39 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:04:43 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBgYefTh+2eNI5BsTjCK6n6ua+x4VBKopDrj8lCLBRgzDo+J8RHsdDZgN7aiqBDLt+iZi1v88iMWc7Wfd/1jcw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:04:43 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:04:48 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:06:17 +0100
+  
+SyntaxError (/home/kevin/Documents/ENSIBS/Semestre-4/Projet-Entreprise/Projet-Lorcyber/app/controllers/welcome_controller.rb:30: syntax error, unexpected tSTRING_BEG, expecting '('
+...ile.new "log.txt",File::CREAT "w+"
+...                              ^):
+  
+app/controllers/welcome_controller.rb:30: syntax error, unexpected tSTRING_BEG, expecting '('
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:08:43 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pAY+f/D/fshh5UL9PuDf//SOeaZbZuj3bInDuyxGPHW/EKmP9Q9p29qm5SfSeEXePciLwXjOCHzewJXWCzBaHg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:08:43 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:09:47 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:09:51 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oCwnqphXlV8XQD2cNUOhPoj8CZBPUN9AalsBtEwtj5C7OrBanaeCTKwDmkbZ2zsfQbr792z4P8vYElfZa1vp+w==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+TypeError (no implicit conversion of Class into String):
+  
+app/controllers/welcome_controller.rb:28:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:10:04 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oCwnqphXlV8XQD2cNUOhPoj8CZBPUN9AalsBtEwtj5C7OrBanaeCTKwDmkbZ2zsfQbr792z4P8vYElfZa1vp+w==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 14ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:10:04 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:10:29 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:10:32 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bh4h31VfuyrFkDNplEpQuNc+W5wI9qtz3rZZUM6SVZl1CLYvUK+sOX7TlLN40sqZHnip+yteS/hs/w896eQz8g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:10:32 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:12:06 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:12:09 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"al2dH+zixUAZQBmG5U7/BiUL8QMCLP82XgsvoOJMdqFxSwrv6RLSU6IDvlwJ1mUn7E0DZCGEH73sQnnNxToQyg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:12:09 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:12:25 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:12:29 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d1GPFLzvpLGSeRs9fLqt7iOI6az8lTvkFqXuly2WSYNsRxjkuR+zoik6vOeQIjfP6s4by98922+k7Lj6CuAv6A==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (private method `open' called for #<File:/home/kevin/Documents/log.txt>):
+  
+app/controllers/welcome_controller.rb:31:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:14:07 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d1GPFLzvpLGSeRs9fLqt7iOI6az8lTvkFqXuly2WSYNsRxjkuR+zoik6vOeQIjfP6s4by98922+k7Lj6CuAv6A==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 14ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:14:07 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.9ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:14:15 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:14:35 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:14:38 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MSgIuOUkh2pXVzebHfpMLkz+isA6zyLJUSR7pBpHCJQqPp9I4NSQeewUkEHxYtYPhbh4pxlnwkLjbS3JPTFu/w==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:14:38 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:14:45 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:14:50 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GIlk/rYBrv6wTyV4hsUAeDmcGp06eLDIKzv7LJVUxQEDn/MOs/G57QsMgqJqXZpZ8Nro+hnQUEOZcq1BsiKjag==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `out' for #<WelcomeController:0x00007f3715b065a0>):
+  
+app/controllers/welcome_controller.rb:36:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:04 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GIlk/rYBrv6wTyV4hsUAeDmcGp06eLDIKzv7LJVUxQEDn/MOs/G57QsMgqJqXZpZ8Nro+hnQUEOZcq1BsiKjag==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:15:04 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:18 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:22 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1wcF0cVySznE4BqgxCCtLv8FzoHbEVqw+GbGmtQsLN4SovnQuXeP1xQJ7BviBiVcrrlXSTEpeFxqM13TCbW2A==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:15:22 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:24 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VA1TtVZpUB54A0msLxQza1euBQmn+gAVMt1wo1ZuDVdPG8RFU5lHDcNA7nbDjKlKnuj3boRS4J6AlCbOcRhrPA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:15:27 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:15:43 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ewxNQtAUIjU7VL7gwSp0P1ZhjlJuPOBw5WSnjN9qcy9gGtqy1eQ1JoAXGTotsu4enyd8NU2UAPtXLfHh+BwVRA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:15:43 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:16:41 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:16:46 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjEa7t+O2tsbtns9HGPYT5DM0Slu/u1ZKv1XEORdJv3ZJ40e2n7NyKD13Ofw+0JuWYojTk1WDdKYtAF9wytAlg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `close' for nil:NilClass):
+  
+app/controllers/welcome_controller.rb:40:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:19:42 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjEa7t+O2tsbtns9HGPYT5DM0Slu/u1ZKv1XEORdJv3ZJ40e2n7NyKD13Ofw+0JuWYojTk1WDdKYtAF9wytAlg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 2..3)):
+  
+app/controllers/welcome_controller.rb:38:in `write'
+app/controllers/welcome_controller.rb:38:in `block in create_file'
+app/controllers/welcome_controller.rb:37:in `open'
+app/controllers/welcome_controller.rb:37:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:19:58 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjEa7t+O2tsbtns9HGPYT5DM0Slu/u1ZKv1XEORdJv3ZJ40e2n7NyKD13Ofw+0JuWYojTk1WDdKYtAF9wytAlg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `close' for nil:NilClass):
+  
+app/controllers/welcome_controller.rb:41:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:20:15 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wjEa7t+O2tsbtns9HGPYT5DM0Slu/u1ZKv1XEORdJv3ZJ40e2n7NyKD13Ofw+0JuWYojTk1WDdKYtAF9wytAlg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:20:15 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:20:17 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:20:29 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NggvAc6MaEG5CEwdFNs39L3XD0w5I/5YphDn8q+hQ3MtHrjxy3x/UgJL68f4Q63VdJH9KxqLHtMUWbGfiNclGA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:20:29 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:20:36 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:20:41 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mHrwVgmm8gr3iOgEFrCZR47ivexPKKOHBChnVNS+g6mDbGemDFblGUzLT976KANmR6RPi2yAQwy2YTE588jlwg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:20:41 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:22:48 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:22:52 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o9DQ5NM09YRw+nW3eU1vkGAnB4Q9l/a/4Ie/TNLR5Tm4xkcU1sTil8u50m2V1fWxqWH14x4/FjRSzukh9aeDUg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:22:52 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:22:58 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:23:01 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7Hz9mpbwTsg/BY8k/s7qoziEAZSmyU3zy5CofxcsMQ33ampqkwBZ24RGKP4SVnCC8cLz84VhrXh52f4SMFpXZg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:23:01 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:24:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:24:53 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+yLyUgYNf/tB5IisHsoBgwZDlP39OhrFivNdAoAqELrgNGWiA/1o6PqnL3byUpuizwVmmt6S+k44ugtvp1x20Q==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:24:53 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:26:31 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:26:35 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HD9j7HL6UiEE29yK9/ILWIQSIC2rLAgAC/+fO1mgiDoHKfQcdwpFMr+Ye1AbapF5TVTSSoiE6Iu5tslWftbuUQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:26:35 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:26:44 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:26:49 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5jwzvp9klAplmCMeSh4k0/1mLC7FMCVpYDjHno31c4f9KqROmpSDGd7bhMSmhr7yNCDeSeaYxeLScZHzqoMV7A==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:26:49 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:27:27 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:27:32 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NysIGiPWTcho/oaxVoqWFob8YQVdbu5fCL5xubAR7XgsPZ/qJiZa29O9IWu6Egw3T7qTYn7GDtS69yfUl2eLEw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:27:32 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:27:36 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:27:40 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FdO7ErshOShCmXFPk7kQNyyDgerSgzMlDJDEwtXxEoIOxSzivtEuO/na1pV/IYoW5cVzjfEr066+2ZKv8od06Q==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:27:40 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:34:06 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:34:10 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdHoK3mDnRWv9qC0bsea9SsTaxWP7nSHjoOOZmrwXfwux3/bfHOKBhS1B26CXwDU4lWZcqxGlAw8ytgLTYY7lw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.1ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/welcome_controller.rb:35:in `printf'
+app/controllers/welcome_controller.rb:35:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:34:24 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdHoK3mDnRWv9qC0bsea9SsTaxWP7nSHjoOOZmrwXfwux3/bfHOKBhS1B26CXwDU4lWZcqxGlAw8ytgLTYY7lw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (too few arguments):
+  
+app/controllers/welcome_controller.rb:35:in `printf'
+app/controllers/welcome_controller.rb:35:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:35:02 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdHoK3mDnRWv9qC0bsea9SsTaxWP7nSHjoOOZmrwXfwux3/bfHOKBhS1B26CXwDU4lWZcqxGlAw8ytgLTYY7lw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (invalid value for Integer(): "/home/kevin/Documents/log.txt"):
+  
+app/controllers/welcome_controller.rb:35:in `printf'
+app/controllers/welcome_controller.rb:35:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:37:05 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NdHoK3mDnRWv9qC0bsea9SsTaxWP7nSHjoOOZmrwXfwux3/bfHOKBhS1B26CXwDU4lWZcqxGlAw8ytgLTYY7lw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:37:05 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.3ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:37:07 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:37:12 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R2+M1+zTV/ucXGrm/W/0l47dnhfy0Jj5ACRZdFfZwyFceRsn6SNA6CcfzTwR9262R5tscNF4eHKybQ8ZcK+lSg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:37:12 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:38:50 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:38:53 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+DQv3QABbvEq6s6rbuxaXJjHDR+w3fYPO3F9768C9E3jIrgtBfF54pGpaXGCdMB9UYH/eJN1FoSJOCuCiHSSJg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:38:53 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:39:15 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:39:18 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"791WTUzBywwjFWwR7D+S8288AMnBTE6F9lb+Fr0D1Ur0y8G9STHcH5hWy8sApwjSpnryruLkrg5EH6h7mnWzIQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:39:18 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:42:11 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:42:15 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SgS9QWSmjFlEjt3cXth5Me9TUfaQWlfPfkKPzn55vuFREiqxYVabSv/NegayQOMQJhWjkbPyt0TMC9mjWQ/Yig==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:42:15 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:43:36 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:43:40 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PftMK+wTS/T3/dn+T2wr2Hwcao2z/5AKvq4Pd/5nZVEm7dvb6eNc50y+fiSj9LH5tVqY6pBXcIEM51ka2REDOg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:43:40 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:52:10 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:52:14 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XfTw1E8KPPtD4fd3XGCGLrYsU47fJ9pS2j4cKmkYH99G4mckSvor6PiiUK2w+BwPf2qh6fyPOtlod0pHTm55tA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 25ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:52:14 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.4ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:59:14 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.3ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 09:59:19 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 50ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 09:59:22 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1ocXOpY72RQnPhYeI5zqnUbizxUZ7VR0Ayf9e1ASF1HNkYDKk8vOB5x9scTPBHC8j6Q9cjpFtP+xbqsWd2RxOg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 26ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 09:59:22 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.4ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 10:09:03 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 10:09:07 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rNB4XYFvS9S3SfhDbicZfNNHFpRHBrerOVz27Xfie7m3xu+thJ9cxwwKX5mCv4NdGgHk82SuVyCLFaCAUJQd0g==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 25ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 10:09:07 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.5ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 10:09:08 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 10:09:25 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z46gr5Dq7v2iCKrMwpFCByWRVIgEv4Kccqn9ez4NRKPUmDdflRr57hlLDRYuCdgm7Nem7ycXYhfA4KsWGXsiyA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..8)):
+  
+app/controllers/welcome_controller.rb:22:in `utc'
+app/controllers/welcome_controller.rb:22:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 10:09:49 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z46gr5Dq7v2iCKrMwpFCByWRVIgEv4Kccqn9ez4NRKPUmDdflRr57hlLDRYuCdgm7Nem7ycXYhfA4KsWGXsiyA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 3.1ms)
+
+
+  
+NameError (undefined local variable or method `time' for #<WelcomeController:0x00007f370c457370>
+Did you mean?  timeout):
+  
+app/controllers/welcome_controller.rb:22:in `create_file'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 10:10:14 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z46gr5Dq7v2iCKrMwpFCByWRVIgEv4Kccqn9ez4NRKPUmDdflRr57hlLDRYuCdgm7Nem7ycXYhfA4KsWGXsiyA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 29ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 10:10:14 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.7ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-20 13:32:59 +0100
+  [1m[35m (3372.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 4277ms (Views: 4165.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 13:33:32 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JbfZ+QgKl+BCksnnx4uT3vDLFidi5wYq98g09GgmyjrTQc6ESa6ksA9e/113PANeDyMGoVUoFTFcLIABV1WznQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 312ms (ActiveRecord: 40.8ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 13:33:33 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.3ms)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
