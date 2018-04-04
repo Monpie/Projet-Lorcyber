@@ -1,10 +1,23 @@
 <h1>Bienvenue sur le site Lorcyber</h1>
 <h1>Connexion</h1>
 
-<%= form_tag "/welcome/index", method: :post do %>
-  <input type="text" name="name" />
-  <input type="password" name="password" />
-  <input type="submit" value="Se connecter" />
-<% end %>
 
+
+<% if @current_user %>
+
+  <p>Bienvenue <%= @current_user.nom %> !</p>
+  <%= link_to 'anomalie', anomalie_path %>
+<% else %>
+
+  <h1>Bienvenue visiteur anonyme !</h1>
+  <%= form_tag "/welcome/index", method: :post do %>
+    <p><label for="Login">Login : </label>
+      <input type="text" name="name" /></p>
+    <p><label for="Password">Password : </label>
+      <input type="password" name="password" /></p>
+    <input type="submit" value="Se connecter" />
+  <% end %>
+
+
+<% end %>
 <div><%= flash[:info] %></div>

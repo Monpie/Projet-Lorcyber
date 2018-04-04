@@ -8087,3 +8087,1425 @@ Processing by AnomalieController#index as HTML
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:10:20 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:11:45 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aPGnFO/o8XEbKQxIFc5QcL7bi7YKSTpQRnAdyQhIr9SeB7BprkzCIVblOvKlecDwQTObMD2GKUvtlKk8NzvWcw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:11:45 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:12:48 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:12:53 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9e5RWI0rEl9wO5zT0hNQ5Tyy7/W/Uw9x/zZFK4RpWT0DGEYlzI8hDz33qmlipMBlw1r/c4icHGpU0vHeuxogmg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 10ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:12:53 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:25:09 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:25:18 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkbigFj0yTjSuORzi30XeBgdAU4uJMkM5yMfxEduyIzwsPX9GVD6aJ900sk7yof45/URyBnr2hdMx6sxeB2xKw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/welcome_controller.rb:10:in `initialize'
+app/controllers/welcome_controller.rb:10:in `new'
+app/controllers/welcome_controller.rb:10:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:25:35 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkbigFj0yTjSuORzi30XeBgdAU4uJMkM5yMfxEduyIzwsPX9GVD6aJ900sk7yof45/URyBnr2hdMx6sxeB2xKw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `time' for #<WelcomeController:0x00007f636a0be2b0>
+Did you mean?  timeout):
+  
+app/controllers/welcome_controller.rb:11:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:26:12 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkbigFj0yTjSuORzi30XeBgdAU4uJMkM5yMfxEduyIzwsPX9GVD6aJ900sk7yof45/URyBnr2hdMx6sxeB2xKw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (undefined local variable or method `time' for #<WelcomeController:0x00007f63697aae08>
+Did you mean?  timeout):
+  
+app/controllers/welcome_controller.rb:11:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:26:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BkbigFj0yTjSuORzi30XeBgdAU4uJMkM5yMfxEduyIzwsPX9GVD6aJ900sk7yof45/URyBnr2hdMx6sxeB2xKw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:26:27 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:30:32 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:34:14 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:34:29 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:34:40 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:34:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 33ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:35:14 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:42:13 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wOp5dNRIwbpZjJBmxmelQvePCz36ezrrOEjxqoaoisE2HG4Jlezy6hRAptx20DXCCGcbu820KfCTrEVfudvzZg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 1.1ms)
+
+
+  
+NameError (undefined local variable or method `log' for #<WelcomeController:0x00007f6348b623a0>
+Did you mean?  loop):
+  
+app/controllers/welcome_controller.rb:13:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:42:31 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wOp5dNRIwbpZjJBmxmelQvePCz36ezrrOEjxqoaoisE2HG4Jlezy6hRAptx20DXCCGcbu820KfCTrEVfudvzZg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:42:31 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:42:41 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:42:44 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NoIlhrzuDTihklUQNuvR1f4saeELr1VUYJygSGKulwvAdDL7/Uo+aOxeY6qGXEFVAcR5ZzxgRk/LeBS9Xd3urA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:42:45 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:43:53 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:43:56 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjMIUHN0tCInz/MFyHwvgRmWMMnuNZQcaw6OsTeXusxwxR8tMtCHcmoDxb94y78B5n4gT9n6hwfA6jpECOTDaw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:43:56 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:25 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:28 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IQI9Af1Ifc9BQ6Zjy6OH6hShz5dtuVQlwfdSuKKksp7X9Cp8vOxOnwyPkNl7FBdq60nfEVp2Rz5qE+ZNndfLOQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:44:28 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:37 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:40 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"e2GZ4K1riYEYPOEz6jQ/A0mS9x+wxxOL2Iz3msGRE/6Nl46d7M+60VXw14lag6+DtnrnmYcIAJBzaENv/uJqWQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:44:40 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:46 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:44:49 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:44:49 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.3ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:49:54 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/kevin/Documents/ENSIBS/Semestre-4/Projet-Entreprise/Projet-Lorcyber/app/models/log.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    return @@instance file_name
+                      ^~~~~~~~~):
+  
+app/models/log.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/welcome_controller.rb:11:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:50:16 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/log.rb:5:in `initialize'
+app/models/log.rb:5:in `new'
+app/models/log.rb:5:in `<class:Log>'
+app/models/log.rb:4:in `<top (required)>'
+app/controllers/welcome_controller.rb:11:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:50:30 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (private method `new' called for Log:Class):
+  
+app/controllers/welcome_controller.rb:11:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:50:47 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/log.rb:16:in `exist?'
+app/models/log.rb:16:in `write'
+app/controllers/welcome_controller.rb:14:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:53:18 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/log.rb:5:in `initialize'
+app/models/log.rb:5:in `new'
+app/models/log.rb:5:in `<class:Log>'
+app/models/log.rb:4:in `<top (required)>'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:53:52 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/log.rb:5:in `initialize'
+app/models/log.rb:5:in `new'
+app/models/log.rb:5:in `<class:Log>'
+app/models/log.rb:4:in `<top (required)>'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:54:21 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.1ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/kevin/Documents/ENSIBS/Semestre-4/Projet-Entreprise/Projet-Lorcyber/app/models/log.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+... @@instance = Log.new file_name
+...                      ^~~~~~~~~):
+  
+app/models/log.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:55:23 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (undefined method `instance' for Logger:Class
+Did you mean?  instance_of?):
+  
+app/models/log.rb:37:in `<class:Log>'
+app/models/log.rb:4:in `<top (required)>'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:55:44 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/log.rb:11:in `instance'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:55:56 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/log.rb:16:in `exist?'
+app/models/log.rb:16:in `write'
+app/controllers/welcome_controller.rb:14:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:56:59 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms)
+
+
+  
+NoMethodError (private method `new' called for Log:Class):
+  
+app/models/log.rb:12:in `instance'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:57:51 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.8ms)
+
+
+  
+NoMethodError (private method `new' called for Log:Class):
+  
+app/models/log.rb:12:in `instance'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 14:58:54 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NGQILxY5LBXB27uFIyvKUpMNW0l8vzYKb0fhwO9l9jTCkh9SV50fRYwXjT+TnFrSbOVLz0twJRHEo1U10BaPkw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 14:58:54 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 14:58:57 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:01:00 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJlg5G3VqI/ZbQEwiqGG65YgYtewARWZ3O+RWxOFSNdib3eZLHGb35ShN4o6FhZrachyUYfOBoJ3CyWuLPYxcA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/log.rb:6:in `initialize'
+app/models/log.rb:6:in `new'
+app/models/log.rb:6:in `<class:Log>'
+app/models/log.rb:4:in `<top (required)>'
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:04:26 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJlg5G3VqI/ZbQEwiqGG65YgYtewARWZ3O+RWxOFSNdib3eZLHGb35ShN4o6FhZrachyUYfOBoJ3CyWuLPYxcA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (private method `new' called for Log:Class):
+  
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:04:46 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJlg5G3VqI/ZbQEwiqGG65YgYtewARWZ3O+RWxOFSNdib3eZLHGb35ShN4o6FhZrachyUYfOBoJ3CyWuLPYxcA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `instance' for Log:Class
+Did you mean?  instance_of?):
+  
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:05:10 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJlg5G3VqI/ZbQEwiqGG65YgYtewARWZ3O+RWxOFSNdib3eZLHGb35ShN4o6FhZrachyUYfOBoJ3CyWuLPYxcA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.3ms)
+
+
+  
+TypeError (no implicit conversion of nil into String):
+  
+app/models/log.rb:17:in `exist?'
+app/models/log.rb:17:in `write'
+app/controllers/welcome_controller.rb:14:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:06:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJlg5G3VqI/ZbQEwiqGG65YgYtewARWZ3O+RWxOFSNdib3eZLHGb35ShN4o6FhZrachyUYfOBoJ3CyWuLPYxcA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:06:27 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:07:10 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:07:13 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qnGY8XpmbwfoV1dZYjvCJqOimb5GeAXxaROxWtkVp8dch4+MO8JcV6WbYePSjFKmXEqJOHG3FurC9wWv5mbeYA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms)
+
+
+  
+NameError (uninitialized class variable @@file_name in Log):
+  
+app/models/log.rb:17:in `get_file_name'
+app/controllers/welcome_controller.rb:13:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:08:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qnGY8XpmbwfoV1dZYjvCJqOimb5GeAXxaROxWtkVp8dch4+MO8JcV6WbYePSjFKmXEqJOHG3FurC9wWv5mbeYA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 10ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:08:27 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:08:41 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:08:46 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"us+f2P7/FZAXOYkTRu2Q4Xpb6ia+RvWcNZ+TjKDJjRNMOYilv1smwFr1v6n2WgBhhbP6oImJ5oeeeyd5n7r0tA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:08:46 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:12:36 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:12:39 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hy8p35mLwQ9hJMlsfe0249wFzMLSI3lMk6A1KbI/oslx2T6i2C/yXyzo/9bNWqZjI+3cROXsalc4RIHcjUzbbg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:12:39 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:12:42 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:13:31 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qfGZcmpvQipZLHXdOByCoIiCFu4VAeTJLs2BKRNuCiRfB44PK8txehTgQ2eIqxIgd2oGaCLO99KFKTXcLB1zgw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:13:31 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:13:55 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:13:58 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKTBQwbivmydRKxFTYJaPJ/7dWz51x6I14W3BYGF+QSKUtY+R0aNPNCImv/9Ncq8YBNl6s4YDZN8YQPwvvaAow==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `get_file_name' for #<Log:0x00007f634907ab08>):
+  
+app/controllers/welcome_controller.rb:12:in `connexion'
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:14:09 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fKTBQwbivmydRKxFTYJaPJ/7dWz51x6I14W3BYGF+QSKUtY+R0aNPNCImv/9Ncq8YBNl6s4YDZN8YQPwvvaAow==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:14:09 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:14:11 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:14:26 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tvkeq3ZO4Jg5/DT0LPJZ/EhyhSuub9yxtSfNQhgnmGK4DwnWN+rTyHQwAk6cRcl8t5qVrZmgz6oew3m3J1ThxQ==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:14:26 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:16:49 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:14 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UqCQbPUHSkG75bbmeeLCWLN+59B8Nb7CcczNvP0i6/ekVocRtKN5EfYpgFzJVVLYTJb3Vkv6rdnaKHlJwlGSUA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 14ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:21:14 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:18 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:45 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oAPKsSFfioDR4W2SlNYgpkqqoc1QxHXa2eGhvODiotNW9d3MYPu50JwtWygkYbAmtUKxS2cLZsFyBRVJ35HbdA==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:45 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:46 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8xnJaHaJxlp/8IUya3iMO27Mpx5XBU9EhWkd8xxrJ/AF794VNy31CjI8s4jbzxy7kSS3mGDKXF8ujakGIxheVw==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:21:46 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:27 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lrRvKWoOz8TRnjzqKEzm/uKV3FTRIUGVQAPL/auRi9lgQnhUK6r8lJxSClCY+3Z+HX3M0ubuUo7r538IlOLyfg==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 5ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:27 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:30 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V8lQqH3C2pHL9G1vMcRrFTggNxMhWpVGG66dGkdKTiWhP0fVPGbpwYY4W9WBc/uVx8gnlRaVhl2wSinveDk3gg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:25:30 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:32 +0100
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant WelcomeController::User):
+  
+app/controllers/welcome_controller.rb:5:in `index'
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:46 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 88ms (Views: 20.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:51 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OPJDC1vWVYD4lz8g5rijpPqseQ3V/hyrWx29CtCcr8HOBFR2GnJm0LVbCZpWDzMkBURpi+IxD7Dw+Qn/7+/WZg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:25:51 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:25:53 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:26:06 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJU/SOmEd6ykICpKzfzmauLcrsFlpTSB1JSrOOgAhxliYyg1qCBE/OnsHPB9S3bqHTS+R1JqJ5p/cB/N13P+vg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:26:06 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:27:20 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Utilisateurs:0x00007f6349604740>):
+     5: 
+     6: <% if @current_user %>
+     7: 
+     8:   <h1>Bienvenue <%= @current_user.name %> !</h1>
+     9: 
+    10: <% else %>
+    11: 
+  
+app/views/welcome/index.html.erb:8:in `_app_views_welcome_index_html_erb__3328460075890209237_70032204733140'
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:27:24 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Utilisateurs:0x00007f63488a4578>):
+     5: 
+     6: <% if @current_user %>
+     7: 
+     8:   <h1>Bienvenue <%= @current_user.name %> !</h1>
+     9: 
+    10: <% else %>
+    11: 
+  
+app/views/welcome/index.html.erb:8:in `_app_views_welcome_index_html_erb__3328460075890209237_70032197753040'
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:27:33 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:27:45 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:27:53 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:28:37 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:38 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:38 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:28:39 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:40 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:40 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.4ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:28:41 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:52 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:28:52 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:29:03 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:29:41 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.4ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:29:41 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:29:42 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:32:55 +0100
+  
+SyntaxError (/home/kevin/Documents/ENSIBS/Semestre-4/Projet-Entreprise/Projet-Lorcyber/config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...get 'welcome/deconnexion', to 'welcome#deconnexion'
+...                              ^):
+  
+config/routes.rb:6: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:32:56 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/welcome/index"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:33:04 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/welcome/index"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:33:19 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 11.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:33:20 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:33:20 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-20 15:33:21 +0100
+Processing by WelcomeController#deconnexion as HTML
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::UnknownFormat (WelcomeController#deconnexion is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.5) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.5) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.5) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.5) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.5) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.5) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.5) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.5) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.5) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.5) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.5) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.5) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.5) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+rack (2.0.4) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.4) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.5) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-20 15:33:41 +0100
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:33:44 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:33:48 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pwFiM/ofAgeQfM7vysiIROrR/XyHw3x5cnZckGIFlfdR93VOu7sxV92w+FV6fxjEFTnt+rAMb2LZkuhlXXbsUA==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:33:48 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-20 15:33:50 +0100
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-20 15:34:07 +0100
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-20 15:34:09 +0100
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-20 15:34:13 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YGHAaDYU4Vkqz83Qn1+RRx4t5KsTxvDmIp+CbD2/8OGWl9cVd7DSCWcD+2ov6AHH4cX0LSQJ4/2JezaZAsyJRg==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-20 15:34:13 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-20 15:34:15 +0100
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000welcome/index
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-03-22 10:42:17 +0100
+  [1m[35m (60.1ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 652ms (Views: 599.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-03-22 10:42:25 +0100
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vNWHJPVvfC2xMewJfOV6/e02OKx2t8klwWQfcX6Kn9TASrIcjpwzTd9OhgFnI8TMfjt/x9cRHraijHXUyhUNmw==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 195ms (ActiveRecord: 51.9ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-22 10:42:25 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.5ms)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-03-22 10:42:29 +0100
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 87ms (Views: 42.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-22 10:42:33 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-03-22 10:42:33 +0100
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-03-22 10:42:35 +0100
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000welcome/index
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-04 09:04:51 +0200
+  [1m[35m (59.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (22.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 575ms (Views: 522.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:10 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mYc2dd9gUTcOqYgFifsXfIM+TI2T5yllM7alTv/plgEgkLC2P3rdtUx2f5O0pTSYW86sysRrHUhHvKZQeBVylQ==", "name"=>"", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = '' AND `utilisateurs`.`password` = '' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/welcome/index
+Completed 302 Found in 98ms (ActiveRecord: 49.6ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:10 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:16 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vg9m/1DiZT4j4h28uV1b/u64Hz+eS/IjkzVOMIPJyC7vGOA8sPjpvGE96iqEA3gaNkj/eMnHxg7nP00uBDUsug==", "name"=>"Admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'Admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 613ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:05:17 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.6ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:38 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 71ms (Views: 26.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:05:39 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.0ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:05:39 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:40 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:05:44 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (1.0ms)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:05:44 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-04 09:05:59 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:19:32 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.5ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/anomalie/show" for 127.0.0.1 at 2018-04-04 09:19:35 +0200
+Processing by AnomalieController#show as HTML
+  [1m[36mAnomalie Load (14.8ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 116ms (ActiveRecord: 66.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Anomalie with 'id'=):
+  
+app/controllers/anomalie_controller.rb:7:in `show'
+Started GET "/anomalie/show/1" for 127.0.0.1 at 2018-04-04 09:19:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/anomalie/show/1"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-04 09:19:44 +0200
+Processing by AnomalieController#index as HTML
+  Rendering anomalie/index.html.erb
+  Rendered anomalie/index.html.erb (0.7ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+

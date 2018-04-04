@@ -1,36 +1,37 @@
 class WelcomeController < ApplicationController
+  $LOG = Log.new "#{Dir.home}/Documents/log.txt"
   def index
+    if session[:user_id]
+      @current_user = Utilisateurs.find(session[:user_id])
+    end
   end
 
   def connexion
     @current_user = Utilisateurs.where(nom: params[:name], password: params[:password]).first
     if @current_user
-
+      session[:user_id] = @current_user.id
       flash[:info] = "Bienvenue #{@current_user.nom} !"
-      create_file
+      #log = Log.new "#{Dir.home}/Documents/log.txt"
+      time = Time.now
+
+      $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+
       #flash[:info] = request.fullpath #Récupère seulement la route
       #flash[:info] = request.env['PATH_INFO'] #Meme chose que fullpath
       #request.original_url #Récupère l'URL original complète
       redirect_to "/anomalie"
     else
+      session[:user_id] = nil
       flash[:info] = "Échec de la connexion"
       redirect_to "/welcome/index"
     end
   end
 
-  def create_file
-    file_name = "#{Dir.home}/Documents/log.txt"
-
-    if not File.exist? file_name
-      @log_file = File.new(file_name, File::CREAT|File::TRUNC|File::RDWR, 0644) #Créer un fichier "log.txt"
-      time = Time.now
-      @log_file << "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] Fichier créé"
-      @log_file.close
-    else
-      @log_file = File.open file_name, "a"
-      time = Time.now
-      @log_file << "\n[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}"
-      @log_file.close
+  def deconnexion
+    unless session[:user_id].nil?
+      session[:user_id] = nil
     end
+
+    redirect_to "welcome/index"
   end
 end

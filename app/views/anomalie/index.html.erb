@@ -1,5 +1,6 @@
 <h2>Page Anomalie</h2>
 
 <div><%= flash[:info] %></div>
-
+<%= session[:user_id] %>
 <%= link_to 'Back', welcome_index_path %>
+<%= link_to 'Deconnexion', welcome_deconnexion_url %>
