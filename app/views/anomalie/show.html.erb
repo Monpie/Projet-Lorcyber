@@ -1,0 +1,34 @@
+<h1>Test</h1>
+<p>
+<label>Statut de l'anomalie : </label>
+  <%= @anomalie.statut %>
+</p>
+<p>
+  <label>Descriptif de l'anomalie : </label>
+  <%= @anomalie.descriptif %>
+</p>
+
+<p>
+  <label>Date de l'anomalie : </label>
+  <%= @anomalie.date %>
+</p>
+
+<%= form_tag "/anomalie/show", method: :post do %>
+  <p>
+  <label>Alertes réelles? </label>
+  <select name="realAlerte">
+    <option value="yes">Oui</option>
+    <option value="no">Non</option>
+  </select>
+  </p>
+
+  <p>
+    <label>Type de l'alerte : </label>
+    <select>
+      <option value="phishing">Phishing</option>
+      <option value="ddos">DDOS</option>
+    </select>
+  </p>
+  <input type="submit" value="Valider" />
+<% end %>
+

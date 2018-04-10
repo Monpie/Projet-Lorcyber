@@ -29,9 +29,10 @@ class WelcomeController < ApplicationController
 
   def deconnexion
     unless session[:user_id].nil?
-      session[:user_id] = nil
+      session.delete(:user_id)
+      @current_user = nil
     end
 
-    redirect_to "welcome/index"
+    redirect_to root_path
   end
 end

@@ -2,5 +2,36 @@
 
 <div><%= flash[:info] %></div>
 <%= session[:user_id] %>
+<br>
+
+<p>
+  <select name="anomalie" id="anomalie">
+<% @anomalies.each do |anomalie| %>
+      <option value="<%= anomalie.id%>"> <%= anomalie.statut%></option>
+<% end %>
+  </select>
+</p>
+
+<table class="table table-hover">
+<tr>
+  <th>Id</th>
+  <th>Statut</th>
+  <th>Descriptif</th>
+  <th>Date</th>
+</tr>
+<% @anomalies.each do |anomalie| %>
+  <tr>
+    <td><%= anomalie.id %></td>
+    <td><%= anomalie.statut %></td>
+    <td><%= anomalie.descriptif %></td>
+    <td><%= anomalie.date %></td>
+    <td><a href="/anomalie/show?id=<%=anomalie.id%>"><button>edit</button></a></td>
+    <td><a href="/anomalie/delete?id=<%=anomalie.id%>">x</a></td>
+  </tr>
+<% end %>
+
+</table>
+
+
 <%= link_to 'Back', welcome_index_path %>
 <%= link_to 'Deconnexion', welcome_deconnexion_url %>
