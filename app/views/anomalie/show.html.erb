@@ -4,6 +4,8 @@
   <%= @anomalie.statut %>
 </p>
 <p>
+
+<p>
   <label>Descriptif de l'anomalie : </label>
   <%= @anomalie.descriptif %>
 </p>
@@ -15,6 +17,7 @@
 
 <%= form_tag "/anomalie/show", method: :post do %>
   <p>
+    <input type="hidden" name="id" value="<%=@anomalie.id%>"/>
   <label>Alertes réelles? </label>
   <select name="realAlerte">
     <option value="yes">Oui</option>
@@ -24,11 +27,10 @@
 
   <p>
     <label>Type de l'alerte : </label>
-    <select>
+    <select name="type">
       <option value="phishing">Phishing</option>
       <option value="ddos">DDOS</option>
     </select>
   </p>
   <input type="submit" value="Valider" />
 <% end %>
-

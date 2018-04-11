@@ -10,21 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180409172141) do
+ActiveRecord::Schema.define(version: 20180411120821) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "date"
     t.text "descriptif"
     t.bigint "anomalie_id"
-    t.bigint "plan_action_types_id"
+    t.bigint "plan_action_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["anomalie_id"], name: "index_actions_on_anomalie_id"
-    t.index ["plan_action_types_id"], name: "index_actions_on_plan_action_types_id"
+    t.index ["plan_action_type_id"], name: "index_actions_on_plan_action_type_id"
   end
 
   create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "statut"
+    t.string "alerte_type"
     t.datetime "date"
     t.text "descriptif"
     t.datetime "created_at", null: false
@@ -43,10 +44,10 @@ ActiveRecord::Schema.define(version: 20180409172141) do
 
   create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "type"
-    t.bigint "utilisateurs_id"
+    t.bigint "utilisateur_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["utilisateurs_id"], name: "index_droits_on_utilisateurs_id"
+    t.index ["utilisateur_id"], name: "index_droits_on_utilisateur_id"
   end
 
   create_table "historiques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -81,16 +82,17 @@ ActiveRecord::Schema.define(version: 20180409172141) do
   create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "nom"
     t.string "password"
-    t.bigint "actions_id"
+    t.bigint "action_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["actions_id"], name: "index_utilisateurs_on_actions_id"
+    t.string "role"
+    t.index ["action_id"], name: "index_utilisateurs_on_action_id"
   end
 
   add_foreign_key "actions", "anomalies", column: "anomalie_id"
-  add_foreign_key "actions", "plan_action_types", column: "plan_action_types_id"
-  add_foreign_key "droits", "utilisateurs", column: "utilisateurs_id"
+  add_foreign_key "actions", "plan_action_types"
+  add_foreign_key "droits", "utilisateurs"
   add_foreign_key "societes", "anomalies", column: "anomalie_id"
   add_foreign_key "societes", "clients"
-  add_foreign_key "utilisateurs", "actions", column: "actions_id"
+  add_foreign_key "utilisateurs", "actions"
 end

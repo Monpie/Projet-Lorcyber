@@ -3,9 +3,9 @@
 one:
   nom: MyString
   password: MyString
-  actions: one
+  action: one
 
 two:
   nom: MyString
   password: MyString
-  actions: two
+  action: two

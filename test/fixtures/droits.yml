@@ -2,8 +2,8 @@
 
 one:
   type: 
-  utilisateurs: one
+  utilisateur: one
 
 two:
   type: 
-  utilisateurs: two
+  utilisateur: two

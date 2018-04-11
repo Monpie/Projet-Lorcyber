@@ -1,0 +1,13 @@
+<h1>Pages users </h1>
+<table class="table table-hover">
+<tr>
+  <th>Id</th>
+  <th>Nom</th>
+  <th>Droits</th>
+</tr>
+<% @Utilisateurs.each do |utilisateur| %>
+  <tr>
+    <td><%= utilisateur.id %></td>
+    <td><%= utilisateur.nom %></td>
+  </tr>
+<% end %>

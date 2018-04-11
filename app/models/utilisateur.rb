@@ -1,3 +1,3 @@
 class Utilisateur < ApplicationRecord
-  belongs_to :actions
+  belongs_to :action
 end

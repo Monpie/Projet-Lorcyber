@@ -1,3 +1,3 @@
 class Droit < ApplicationRecord
-  belongs_to :utilisateurs
+  belongs_to :utilisateur
 end

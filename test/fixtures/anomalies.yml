@@ -2,10 +2,12 @@
 
 one:
   statut: MyString
-  date: 2018-03-14 13:38:35
+  type: 
+  date: 2018-04-11 09:39:52
   descriptif: MyText
 
 two:
   statut: MyString
-  date: 2018-03-14 13:38:35
+  type: 
+  date: 2018-04-11 09:39:52
   descriptif: MyText
