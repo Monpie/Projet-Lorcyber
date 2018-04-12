@@ -15,6 +15,9 @@ class AnomalieController < ApplicationController
     redirect_to anomalie_path
   end
 
+  def index
+    @current_user = get_current_user
+  end
 
   def show
     @current_user = get_current_user
@@ -65,7 +68,7 @@ class AnomalieController < ApplicationController
 
   def check_access(access)
     @current_user = get_current_user
-    if !@current_user || @current_user.role != access
+    if !@current_user || Droit.find(@current_user.droit_id).role != access
       return head :forbidden
     end
   end
