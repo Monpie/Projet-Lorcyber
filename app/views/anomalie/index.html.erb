@@ -1,9 +1,7 @@
-<% if session[:user_id] %>
+<% if @current_user %>
 
-<% if Utilisateurs.find(session[:user_id]).role == "admin" %>
+<% if Droit.find(@current_user.droit_id).role == "admin" %>
 <h2>Page Anomalie</h2>
-
-<%= Utilisateurs.find(session[:user_id]).role %>
 
 <div><%= flash[:info] %></div>
 <%= session[:user_id] %>
@@ -12,52 +10,60 @@
 <p>
   <h1>Créer anomalie</h1>
   <%= form_tag "/anomalie/create", method: :post do %>
-  <p> <label>Descriptif de l'alerte : </label>
+  <p>
+    <label>Descriptif de l'alerte :
+    </label>
     <textarea name="descriptif"></textarea>
   </p>
-    <input type="submit" value="Valider" />
+  <input type="submit" value="Valider"/>
   <% end %>
 </p>
 
-
 <p>
   <select name="anomalie" id="anomalie">
-<% @anomalies.each do |anomalie| %>
-      <option value="<%= anomalie.id%>"> <%= anomalie.statut%></option>
-<% end %>
-  </select>
-</p>
+    <% @anomalies.each do |anomalie| %>
+    <option value="<%= anomalie.id%>">
+      <%= anomalie.statut%></option>
+      <% end %>
+    </select>
+  </p>
 
-<table class="table table-hover">
-<tr>
-  <th>Id</th>
-  <th>Statut</th>
-  <th>Type</th>
-  <th>Descriptif</th>
-  <th>Date</th>
-</tr>
-<% @anomalies.each do |anomalie| %>
-  <tr>
-    <td><%= anomalie.id %></td>
-    <td><%= anomalie.statut %></td>
-    <td><%= anomalie.alerte_type %></td>
-    <td><%= anomalie.descriptif %></td>
-    <td><%= anomalie.date %></td>
-    <td><a href="/anomalie/show?id=<%=anomalie.id%>"><button>edit</button></a></td>
-    <td><a href="/anomalie/delete?id=<%=anomalie.id%>">x</a></td>
-  </tr>
-<% end %>
+  <table class="table table-hover">
+    <tr>
+      <th>Id</th>
+      <th>Statut</th>
+      <th>Type</th>
+      <th>Descriptif</th>
+      <th>Date</th>
+    </tr>
+    <% @anomalies.each do |anomalie| %>
+    <tr>
+      <td><%= anomalie.id %></td>
+      <td><%= anomalie.statut %></td>
+      <td><%= anomalie.alerte_type %></td>
+      <td><%= anomalie.descriptif %></td>
+      <td><%= anomalie.date %></td>
+      <td>
+        <a href="/anomalie/show?id=<%=anomalie.id%>">
+          <button>edit</button>
+        </a>
+      </td>
+      <td>
+        <a href="/anomalie/delete?id=<%=anomalie.id%>">x</a>
+      </td>
+    </tr>
+    <% end %>
 
-</table>
+  </table>
 
-<%= link_to 'Back', welcome_index_path %>
-<%= link_to 'Deconnexion', welcome_deconnexion_url %>
-<% else %>
-<p>Vous n'avez pas les droits pour accéder à cette page</p>
-<%= link_to 'Accueil', welcome_index_path %>
-<%= link_to 'Deconnexion', welcome_deconnexion_url %>
-<% end %>
-<% else %>
-<p>Vous n'êtes pas connecté, veuillez vous connecter</p>
-<%= link_to 'Accueil', welcome_index_path %>
-<% end %>
+  <%= link_to 'Back', welcome_index_path %>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% else %>
+  <p>Vous n'avez pas les droits pour accéder à cette page</p>
+  <%= link_to 'Accueil', welcome_index_path %>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% end %>
+  <% else %>
+  <p>Vous n'êtes pas connecté, veuillez vous connecter</p>
+  <%= link_to 'Accueil', welcome_index_path %>
+  <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412140843) do
+ActiveRecord::Schema.define(version: 20180412162927) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 20180412140843) do
     t.bigint "plan_action_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "utilisateur_id"
     t.index ["anomalie_id"], name: "index_actions_on_anomalie_id"
     t.index ["plan_action_type_id"], name: "index_actions_on_plan_action_type_id"
+    t.index ["utilisateur_id"], name: "fk_rails_3a407e4689"
   end
 
   create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -73,16 +75,17 @@ ActiveRecord::Schema.define(version: 20180412140843) do
   create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nom"
     t.string "password"
-    t.bigint "action_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "role"
-    t.index ["action_id"], name: "index_utilisateurs_on_action_id"
+    t.bigint "droit_id"
+    t.index ["droit_id"], name: "fk_rails_81397231ea"
   end
 
   add_foreign_key "actions", "anomalies", column: "anomalie_id"
   add_foreign_key "actions", "plan_action_types"
+  add_foreign_key "actions", "utilisateurs"
   add_foreign_key "anomalies", "societes"
   add_foreign_key "droits", "utilisateurs"
-  add_foreign_key "utilisateurs", "actions"
+  add_foreign_key "utilisateurs", "droits"
 end

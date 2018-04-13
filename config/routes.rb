@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'anomalie/show', to: 'anomalie#show'
   get 'anomalie/delete', to:  'anomalie#delete'
 
+  get 'user/delete' => 'user#delete'
   get 'user' => 'user#index'
+  get 'user/show' => 'user#show'
 
   get 'societe', to: 'societe#index'
   get 'societe/show', to: 'societe#show'
@@ -19,8 +21,9 @@ Rails.application.routes.draw do
 
   post 'anomalie/show' => 'anomalie#alerte'
   post 'anomalie/create' => 'anomalie#create'
-
   post 'societe/show' => 'societe#edit'
   post 'societe/create' => 'societe#create'
+  post 'user/edit' => 'user#edit'
+  post 'user/create' => 'user#create'
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
