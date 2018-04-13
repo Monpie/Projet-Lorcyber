@@ -4,13 +4,23 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'welcome/deconnexion', to: 'welcome#deconnexion'
+
   get 'anomalie', to: 'anomalie#index'
   get 'anomalie/show', to: 'anomalie#show'
   get 'anomalie/delete', to:  'anomalie#delete'
+
   get 'user' => 'user#index'
 
+  get 'societe', to: 'societe#index'
+  get 'societe/show', to: 'societe#show'
+  get 'societe/delete', to:  'societe#delete'
+
   post 'welcome/index' => 'welcome#connexion'
+
   post 'anomalie/show' => 'anomalie#alerte'
   post 'anomalie/create' => 'anomalie#create'
+
+  post 'societe/show' => 'societe#edit'
+  post 'societe/create' => 'societe#create'
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

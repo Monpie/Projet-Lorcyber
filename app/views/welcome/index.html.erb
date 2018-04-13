@@ -1,16 +1,21 @@
-<h1>Bienvenue sur le site Lorcyber</h1>
-<h1>Connexion</h1>
+<h1>Bienvenue sur Lorcyber</h1>
 
 
 
 <% if @current_user %>
 
   <p>Bienvenue <%= @current_user.nom %> !</p>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <h2>Panneau d'administration</h2>
   <%= link_to 'anomalie', anomalie_path %>
+  <br />
+  <%= link_to 'societe', societe_path %>
+  <br />
 <% else %>
 
   <h1>Bienvenue visiteur anonyme !</h1>
   <%= form_tag "/welcome/index", method: :post do %>
+    <h2>Connectez-vous</h2>
     <p><label for="Login">Login : </label>
       <input type="text" name="name" /></p>
     <p><label for="Password">Password : </label>

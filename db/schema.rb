@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180411120821) do
+ActiveRecord::Schema.define(version: 20180412140843) do
 
-  create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
     t.text "descriptif"
     t.bigint "anomalie_id"
@@ -23,26 +23,18 @@ ActiveRecord::Schema.define(version: 20180411120821) do
     t.index ["plan_action_type_id"], name: "index_actions_on_plan_action_type_id"
   end
 
-  create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "statut"
-    t.string "alerte_type"
+    t.string "type"
     t.datetime "date"
     t.text "descriptif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "societe_id"
+    t.index ["societe_id"], name: "fk_rails_5711632fe0"
   end
 
-  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "nom"
-    t.string "prenom"
-    t.string "mail"
-    t.string "adresse"
-    t.string "telephone"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "type"
     t.bigint "utilisateur_id"
     t.datetime "created_at", null: false
@@ -50,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180411120821) do
     t.index ["utilisateur_id"], name: "index_droits_on_utilisateur_id"
   end
 
-  create_table "historiques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "historiques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
     t.text "evenements"
     t.string "utilisateur"
@@ -58,7 +50,7 @@ ActiveRecord::Schema.define(version: 20180411120821) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "plan_action_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "plan_action_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "type"
     t.text "descriptif"
     t.string "liste_action"
@@ -68,18 +60,17 @@ ActiveRecord::Schema.define(version: 20180411120821) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "societes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "nom"
-    t.string "referent_technique"
-    t.bigint "client_id"
-    t.bigint "anomalie_id"
+  create_table "societes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "nom_societe"
+    t.string "referent"
+    t.string "mail"
+    t.string "adresse"
+    t.integer "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["anomalie_id"], name: "index_societes_on_anomalie_id"
-    t.index ["client_id"], name: "index_societes_on_client_id"
   end
 
-  create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nom"
     t.string "password"
     t.bigint "action_id"
@@ -91,8 +82,7 @@ ActiveRecord::Schema.define(version: 20180411120821) do
 
   add_foreign_key "actions", "anomalies", column: "anomalie_id"
   add_foreign_key "actions", "plan_action_types"
+  add_foreign_key "anomalies", "societes"
   add_foreign_key "droits", "utilisateurs"
-  add_foreign_key "societes", "anomalies", column: "anomalie_id"
-  add_foreign_key "societes", "clients"
   add_foreign_key "utilisateurs", "actions"
 end
