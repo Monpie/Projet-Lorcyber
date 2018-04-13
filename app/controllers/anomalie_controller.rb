@@ -12,6 +12,7 @@ class AnomalieController < ApplicationController
     @anomalie.statut = "Alerte"
     @anomalie.descriptif = params[:descriptif]
     @anomalie.date = Time.now
+    @anomalie.societe = Societe.find(15)
     @anomalie.save
     time = Time.now
     $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"

@@ -1,3 +1,18 @@
+
+<h1>Pages users </h1>
+<table class="table table-hover">
+<tr>
+  <th>Id</th>
+  <th>Nom</th>
+  <th>Droits</th>
+</tr>
+<% @Utilisateurs.each do |utilisateur| %>
+  <tr>
+    <td><%= utilisateur.id %></td>
+    <td><%= utilisateur.nom %></td>
+  </tr>
+<% end %>
+</table>
 <% if @current_user %>
   <% if Droit.find(@current_user.droit_id).role == "admin"  %>
     <h1>Pages users
@@ -64,3 +79,4 @@
     <p>Vous devez être connecté pour pouvoir accéder à cette page</p>
     <%= link_to 'Accueil', welcome_index_path %>
   <% end %>
+</table>

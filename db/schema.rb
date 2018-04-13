@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180412162927) do
     t.text "descriptif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "societe_id"
+    t.index ["societe_id"], name: "fk_rails_5711632fe0"
   end
 
   create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -71,14 +73,13 @@ ActiveRecord::Schema.define(version: 20180412162927) do
   end
 
   create_table "societes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "nom"
-    t.string "referent_technique"
-    t.bigint "client_id"
-    t.bigint "anomalie_id"
+    t.string "nom_societe"
+    t.string "referent"
+    t.string "mail"
+    t.string "adresse"
+    t.integer "telephone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["anomalie_id"], name: "index_societes_on_anomalie_id"
-    t.index ["client_id"], name: "index_societes_on_client_id"
   end
 
   create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,8 +94,7 @@ ActiveRecord::Schema.define(version: 20180412162927) do
   add_foreign_key "actions", "anomalies", column: "anomalie_id"
   add_foreign_key "actions", "plan_action_types"
   add_foreign_key "actions", "utilisateurs"
+  add_foreign_key "anomalies", "societes"
   add_foreign_key "droits", "utilisateurs"
-  add_foreign_key "societes", "anomalies", column: "anomalie_id"
-  add_foreign_key "societes", "clients"
   add_foreign_key "utilisateurs", "droits"
 end

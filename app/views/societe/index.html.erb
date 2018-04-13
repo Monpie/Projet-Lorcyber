@@ -1,0 +1,82 @@
+<% if @current_user %>
+
+  <% if Droit.find(@current_user.droit_id).role == "admin" %>
+    <h2>Page Societe</h2>
+
+    
+    <div><%= flash[:info] %></div>
+    <%= session[:user_id] %>
+    <br>
+
+    <h1>Créer societe</h1>
+    <%= form_tag "/societe/create", method: :post do %>
+      <form>
+        <p>
+          <label for="nom">Nom de la société</label>
+          <input type="text" name="nom" id="nom" required />
+
+          <br />
+
+          <label for="ref">Référent technique de la société :</label>
+          <input type="text" name="ref" id="ref"/>
+
+          <br/>
+
+          <label for="adresse">Adresse société</label>
+          <br />
+          <textarea type="text" name="adresse" id="adresse" rows="5" cols="20"></textarea>
+
+          <br/>
+
+          <label for="mail">Mail</label>
+          <input type="email" name="mail" id="mail"/>
+
+          <br/>
+
+          <label for="tel">Téléphone</label>
+          <input type="tel" name="tel" id="tel"/>
+
+          <br/>
+          <input type="submit" value="Valider"/>
+        </p>
+      </form>
+    <% end %>
+
+
+    <table class="table table-hover">
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Référent Technique</th>
+        <th>Adresse</th>
+        <th>Mail</th>
+        <th>Téléphone</th>
+      </tr>
+      <% @societes.each do |societe| %>
+        <tr>
+          <td><%= societe.id %></td>
+          <td><%= societe.nom_societe %></td>
+          <td><%= societe.referent %></td>
+          <td><%= societe.mail %></td>
+          <td><%= societe.adresse %></td>
+          <td><%= societe.telephone %></td>
+          <td><a href="/societe/show?id=<%= societe.id %>">
+            <button>edit</button>
+          </a></td>
+          <td><a href="/societe/delete?id=<%= societe.id %>">x</a></td>
+        </tr>
+      <% end %>
+
+    </table>
+
+    <%= link_to 'Back', welcome_index_path %>
+    <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% else %>
+    <p>Vous n'avez pas les droits pour accéder à cette page</p>
+    <%= link_to 'Accueil', welcome_index_path %>
+    <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% end %>
+<% else %>
+  <p>Vous n'êtes pas connecté, veuillez vous connecter</p>
+  <%= link_to 'Accueil', welcome_index_path %>
+<% end %>
