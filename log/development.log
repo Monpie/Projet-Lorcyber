@@ -27747,3 +27747,178 @@ puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
 puma (3.11.3) lib/puma/server.rb:438:in `process_client'
 puma (3.11.3) lib/puma/server.rb:302:in `block in run'
 puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-13 09:13:34 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:13:40 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (6.8ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:13:40 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (3.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/societe/create" for 127.0.0.1 at 2018-04-13 09:13:53 +0200
+Processing by SocieteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BJomlLYWK07BX+bNb36Jjq888zqwttPzao1YKudi/lP/hXg+V419Bdsis2M6vbe7wTr7I65cZdpk5Od3ZGCb/A==", "nom"=>"A", "ref"=>"B", "adresse"=>"C", "mail"=>"D@d", "tel"=>"E"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `societes` (`nom_societe`, `referent`, `mail`, `adresse`, `telephone`, `created_at`, `updated_at`) VALUES ('A', 'B', 'D@d', 'C', 0, '2018-04-13 07:13:53', '2018-04-13 07:13:53')[0m
+  [1m[35m (148.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 158ms (ActiveRecord: 149.6ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:13:53 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (6.4ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/societe/show?id=17" for 127.0.0.1 at 2018-04-13 09:13:56 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 17 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (10.1ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-13 09:14:09 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"anCEBl71LIGki1ET8rhteyXYc72LaZAUnxgECGaDsmRsm329eAkRpKZ9fzHrH2+hA9CLkyzWyAO/sSCH2A2wdA==", "id"=>"17", "nom"=>"A", "ref"=>"f", "adresse"=>"sd", "mail"=>"sdf@5", "tel"=>"\""}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 17 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `societes` SET `nom_societe` = 'A', `referent` = 'f', `mail` = 'sdf@5', `adresse` = 'sd', `telephone` = 0, `updated_at` = '2018-04-13 07:14:09' WHERE `societes`.`id` = 17[0m
+  [1m[35m (77.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 85ms (ActiveRecord: 78.9ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:14:09 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (5.9ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-13 09:14:18 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/plan" for 127.0.0.1 at 2018-04-13 09:14:51 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/plan"):
+  
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-04-13 09:14:56 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 28.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:35:12 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (4.1ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-13 09:35:12 +0200
+Processing by SocieteController#index as HTML
+  Rendering societe/index.html.erb
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (6.8ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 09:36:00 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 09:36:13 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 129ms (Views: 114.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 09:36:14 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 31.6ms | ActiveRecord: 0.3ms)
+
+
