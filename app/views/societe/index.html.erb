@@ -1,13 +1,7 @@
-<% if session[:user_id] %>
+<% if @current_user %>
 
-  <% if Utilisateurs.find(session[:user_id]).role == "admin" %>
+  <% if Droit.find(@current_user.droit_id).role == "admin" %>
     <h2>Page Societe</h2>
-
-    <%= Utilisateurs.find(session[:user_id]).role %>
-
-    <div><%= flash[:info] %></div>
-    <%= session[:user_id] %>
-    <br>
 
     <h1>Créer societe</h1>
     <%= form_tag "/societe/create", method: :post do %>
@@ -25,7 +19,7 @@
 
           <label for="adresse">Adresse société</label>
           <br />
-          <textarea type="text" name="adresse" id="adresse" rows="5" cols="20"></textarea>
+          <textarea type="text" name="adresse" id="adresse" rows="5" cols="50"></textarea>
 
           <br/>
 

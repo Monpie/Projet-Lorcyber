@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180412162927) do
 
   create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "statut"
-    t.string "type"
+    t.string "alerte_type"
     t.datetime "date"
     t.text "descriptif"
     t.datetime "created_at", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180412162927) do
   end
 
   create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "type"
+    t.string "role"
     t.bigint "utilisateur_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

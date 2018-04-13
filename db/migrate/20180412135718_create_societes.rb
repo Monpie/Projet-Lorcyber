@@ -1,5 +1,6 @@
 class CreateSocietes < ActiveRecord::Migration[5.1]
   def change
+    drop_table :societes
     create_table :societes do |t|
       t.string :nom_societe
       t.string :referent
@@ -10,4 +11,3 @@ class CreateSocietes < ActiveRecord::Migration[5.1]
     end
   end
 end
-

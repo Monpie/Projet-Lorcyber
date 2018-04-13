@@ -18,6 +18,9 @@ class SocieteController < ApplicationController
     redirect_to societe_path
   end
 
+  def index
+    @current_user = get_current_user
+  end
 
   def show
     @current_user = get_current_user
@@ -60,9 +63,12 @@ class SocieteController < ApplicationController
   end
 
   def check_access(access)
-    @current_user = get_current_user
-    if !@current_user || @current_user.role != access
-      return head :forbidden
+    bool = false
+    if @current_user
+      if Droit.find(@current_user.droit_id).role == access
+        bool = true
+      end
     end
+    return bool
   end
 end

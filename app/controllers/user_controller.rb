@@ -2,6 +2,9 @@ class UserController < ApplicationController
 
   def initialize
     @Utilisateurs = Utilisateurs.find_each
+    if !$LOG
+      $LOG = Log.new "#{Dir.home}/Documents/log.txt"
+    end
   end
 
   def create
@@ -20,11 +23,15 @@ class UserController < ApplicationController
 
   def show
     get_current_user
-    time = Time.now
-    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
-    check_access "admin"
-    @utilisateur = Utilisateurs.find(params[:id])
-    @droits = Droit.find_each
+    if new_check_access("admin")
+      time = Time.now
+      $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+      check_access "admin"
+      @utilisateur = Utilisateurs.find(params[:id])
+      @droits = Droit.find_each
+    else
+      redirect_to user_path
+    end
   end
 
   def index
@@ -92,7 +99,7 @@ class UserController < ApplicationController
 
   def check_password_security
     bool = true;
-    if params[:password]
+    unless params[:password].nil?
       if params[:password].size < 8
         message = "Vous devez saisir un mot de passe d'au moins 8 caractère !"
         bool = false;

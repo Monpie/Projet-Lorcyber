@@ -1,9 +1,6 @@
-<h1>Bienvenue sur Lorcyber</h1>
-
-
-
+<h1>Bienvenue sur le site Lorcyber</h1>
+<h1>Connexion</h1>
 <% if @current_user %>
-
   <p>Bienvenue <%= @current_user.nom %> !</p>
   <%= link_to 'Deconnexion', welcome_deconnexion_url %>
   <h2>Panneau d'administration</h2>
@@ -11,8 +8,16 @@
   <br />
   <%= link_to 'societe', societe_path %>
   <br />
-<% else %>
 
+  <% if Droit.find(@current_user.droit_id).role == "admin" %>
+  <p>
+    <%= link_to 'Gérer les utilisateurs', user_path %>
+  </p>
+  <% end %>
+  <p>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+</p>
+<% else %>
   <h1>Bienvenue visiteur anonyme !</h1>
   <%= form_tag "/welcome/index", method: :post do %>
     <h2>Connectez-vous</h2>
@@ -22,7 +27,5 @@
       <input type="password" name="password" /></p>
     <input type="submit" value="Se connecter" />
   <% end %>
-
-
+  <p><%= flash[:info] %></p>
 <% end %>
-<div><%= flash[:info] %></div>
