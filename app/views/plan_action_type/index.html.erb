@@ -1,3 +1,12 @@
-<% @types.each do |t| %>
-  <p> type = <%=t%> </p>
+
+<% unless @current_user %>
+  <% @types.each do |t| %>
+    <p> type = <%=t%> </p>
+  <% end %>
+<% end %>
+<%= flash[:info] %>
+<%= flash[:auth_error]%>
+<% if @anomalie %>
+  <p><%= @anomalie.statut %></p>
+  <p>pas null</p>
 <% end %>

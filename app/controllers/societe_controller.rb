@@ -1,6 +1,9 @@
 class SocieteController < ApplicationController
   def initialize
     @societes = Societe.find_each
+    if !$LOG
+      $LOG = Log.new "#{Dir.home}/Documents/log.txt"
+    end
   end
 
   def create
@@ -14,7 +17,7 @@ class SocieteController < ApplicationController
     @societe.save
 
     time = Time.now
-    #$LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
     redirect_to societe_path
   end
 

@@ -33333,3 +33333,338 @@ FOREIGN KEY (`societe_id`)
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6668909700278373240')[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-04-13 12:55:21 +0200
+  [1m[35m (63.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (2.2ms)
+Completed 200 OK in 55ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan" for 127.0.0.1 at 2018-04-13 12:55:29 +0200
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mAnomalie Load (0.6ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  [1m[36mAnomalie Load (20.7ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 44ms (ActiveRecord: 20.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Anomalie with 'id'=):
+  
+app/controllers/plan_action_type_controller.rb:17:in `index'
+Started GET "/plan" for 127.0.0.1 at 2018-04-13 12:56:17 +0200
+  [1m[36mAnomalie Load (0.6ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan" for 127.0.0.1 at 2018-04-13 12:58:27 +0200
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 12:59:05 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.7ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2018-04-13 12:59:09 +0200
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` ORDER BY `utilisateurs`.`id` ASC LIMIT 1000[0m
+  Rendered user/index.html.erb (37.2ms)
+Completed 200 OK in 42ms (Views: 18.2ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-13 12:59:20 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.7ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-13 12:59:26 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PS+oXZiPg6hWUNghTUgp/NuKTMai+YBcgPzQDBcXEOlvtLiUihDtxo3AgILjhCGDBp2bGMyEL5jqQviaZevWGQ==", "name"=>"admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 12:59:26 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (53.2ms)
+Completed 200 OK in 59ms (Views: 41.5ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2018-04-13 12:59:28 +0200
+Processing by UserController#index as HTML
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering user/index.html.erb
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` ORDER BY `utilisateurs`.`id` ASC LIMIT 1000[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` ORDER BY `droits`.`id` ASC LIMIT 1000[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` ORDER BY `utilisateurs`.`id` ASC LIMIT 1000[0m  [["LIMIT", 1000]]
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendered user/index.html.erb (11.3ms)
+Completed 200 OK in 19ms (Views: 11.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 12:59:45 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (2.7ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-04-13 12:59:48 +0200
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 12:59:48 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.8ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2018-04-13 12:59:52 +0200
+Processing by UserController#index as HTML
+  Rendering user/index.html.erb
+  Rendered user/index.html.erb (2.4ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan" for 127.0.0.1 at 2018-04-13 12:59:55 +0200
+  [1m[36mAnomalie Load (0.6ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.8ms)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:01:20 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.3ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-13 13:01:25 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i0NsLs6VZTLFqPiN7C4NFaD9JV6ZlLgZQF3qtGXwWF/Z2Hzn3AoLXB44oC5C4gVqferygPfpF90q48IiFwyerw==", "name"=>"admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:01:25 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.7ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (3.1ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-13 13:01:34 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.8ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.6ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.7ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  [1m[36mCACHE Anomalie Load (0.0ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m  [["LIMIT", 1000]]
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Societe Load (0.0ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Societe Load (0.0ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Societe Load (0.0ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered anomalie/index.html.erb (41.0ms)
+Completed 200 OK in 55ms (Views: 27.2ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:01:36 +0200
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 4 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.7ms)
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:04:21 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 2 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-04-13 13:04:23 +0200
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:04:23 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.9ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:04:28 +0200
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.9ms)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan?id=5" for 127.0.0.1 at 2018-04-13 13:04:42 +0200
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"5"}
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.8ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:04:46 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.8ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-13 13:05:44 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fUDKd+CTe/LgRJ5tXgAKhJNkJ+S05gSyKtljUkVuuDYv29q+8gwVnDvUxs7wzAL7TnPwOtqbq3ZAZ0vEN5J+xg==", "name"=>"test", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'test' AND `utilisateurs`.`password` = 'azertyuiop' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:05:44 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendered welcome/index.html.erb (3.6ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:05:51 +0200
+  [1m[36mAnomalie Load (0.6ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (1.2ms)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:06:28 +0200
+  [1m[36mAnomalie Load (0.7ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (1.4ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/kevin/Documents/ENSIBS/Semestre-4/Projet-Entreprise/Projet-Lorcyber/app/views/plan_action_type/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/plan_action_type/index.html.erb:18: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:06:39 +0200
+  [1m[36mAnomalie Load (0.6ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.9ms)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:08:01 +0200
+  [1m[36mAnomalie Load (0.4ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.8ms)
+Completed 200 OK in 30ms (Views: 2.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:09:26 +0200
+  [1m[36mAnomalie Load (1.0ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  [1m[36mDroit Load (0.7ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.7ms)
+Completed 200 OK in 25ms (Views: 2.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:09:30 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 5 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendered welcome/index.html.erb (3.3ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-04-13 13:09:32 +0200
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-13 13:09:32 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (1.6ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/plan?id=4" for 127.0.0.1 at 2018-04-13 13:09:38 +0200
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"4"}
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
