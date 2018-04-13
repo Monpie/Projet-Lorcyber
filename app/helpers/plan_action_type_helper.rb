@@ -1,0 +1,2 @@
+module PlanActionTypeHelper
+end

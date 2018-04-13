@@ -44,9 +44,14 @@
       <td><%= anomalie.descriptif %></td>
       <td><%= anomalie.date %></td>
       <td>
+        <% if anomalie.statut == "Incident" %>
+        <a href="/plan"><button>Editer plan action</button></a>
+
+        <% else %>
         <a href="/anomalie/show?id=<%=anomalie.id%>">
           <button>edit</button>
         </a>
+        <% end %>
       </td>
       <td>
         <a href="/anomalie/delete?id=<%=anomalie.id%>">x</a>

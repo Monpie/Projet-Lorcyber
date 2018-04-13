@@ -1,5 +1,11 @@
 class WelcomeController < ApplicationController
-  $LOG = Log.new "#{Dir.home}/Documents/log.txt"
+  def initialize
+    if !$LOG
+      $LOG = Log.new "#{Dir.home}/Documents/log.txt"
+    end
+  end
+
+  #$LOG = Log.new "#{Dir.home}/Documents/log.txt"
   def index
     if session[:user_id]
       @current_user = Utilisateurs.find(session[:user_id])
@@ -10,7 +16,6 @@ class WelcomeController < ApplicationController
     @current_user = Utilisateurs.where(nom: params[:name], password: params[:password]).first
     if @current_user
       session[:user_id] = @current_user.id
-      flash[:info] = "Bienvenue #{@current_user.nom} !"
       #log = Log.new "#{Dir.home}/Documents/log.txt"
       time = Time.now
 
@@ -19,7 +24,7 @@ class WelcomeController < ApplicationController
       #flash[:info] = request.fullpath #Récupère seulement la route
       #flash[:info] = request.env['PATH_INFO'] #Meme chose que fullpath
       #request.original_url #Récupère l'URL original complète
-      redirect_to "/anomalie"
+      redirect_to root_path
     else
       session[:user_id] = nil
       flash[:info] = "Échec de la connexion"
