@@ -43,13 +43,18 @@ class UserController < ApplicationController
   end
 
   def edit
-    get_current_user
-    @utilisateur = Utilisateurs.find(params[:id])
-    @utilisateur.nom = params[:nom]
-    @utilisateur.droit_id = Droit.find(params[:role]).id
-    @utilisateur.save
-    time = Time.now
-    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}, role : #{Droit.find(@utilisateur.droit_id).role}}"
+    if get_current_user
+      if new_check_access("admin")
+        @utilisateur = Utilisateurs.find(params[:id])
+        unless last_admin?(@utilisateur)
+          @utilisateur.nom = params[:nom]
+          @utilisateur.droit_id = Droit.find(params[:role]).id
+          @utilisateur.save
+          time = Time.now
+          $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}, role : #{Droit.find(@utilisateur.droit_id).role}}"
+        end
+      end
+    end
     redirect_to user_path
   end
 

@@ -1,14 +1,9 @@
 <% if @current_user %>
 
   <% if Droit.find(@current_user.droit_id).role == "admin" %>
-    <h2>Page Societe</h2>
+    <h1>Page Societe</h1>
 
-    
-    <div><%= flash[:info] %></div>
-    <%= session[:user_id] %>
-    <br>
-
-    <h1>Créer societe</h1>
+    <h2>Créer societe</h2>
     <%= form_tag "/societe/create", method: :post do %>
       <form>
         <p>

@@ -1,0 +1,22 @@
+<h1>Page show</h1>
+<%= flash[:test] %>
+<% if @anomalie %>
+  <h1>Plan d'action à effectuer</h1>
+  <% if  @types.include? @anomalie.alerte_type %>
+    <p>Type :<%=@anomalie.alerte_type%></p>
+    <p>Date de l'anomalie :
+      <%=@anomalie.date%></p>
+    <p>Date avant laquelle l'anomalie doit être traité :
+      <%7.times do%>
+        <% @anomalie.date = @anomalie.date.next_day%><% end%>
+        <%=@anomalie.date%>
+      </p>
+      <p>Description de l'anomalie :
+        <%=@anomalie.descriptif%></p>
+    <% end %>
+
+    <%= form_tag "/plan/create", method: :post do %>
+    <input type="hidden" name="anomalie_id" value="<%=@anomalie.id%>"/>
+    <input type="submit" value="Générer"/>
+  <% end %>
+<% end %>

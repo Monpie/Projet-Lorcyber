@@ -46,9 +46,16 @@ class AnomalieController < ApplicationController
 
   def delete
     @current_user = get_current_user
+    @plans = PlanActionType.find_each
     if @current_user && check_access("admin")
       @anomalie = Anomalie.find(params[:id])
       time = Time.now
+      @plans.each do |p|
+        if p.anomaly_id == @anomalie.id
+         p.delete
+         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, deleted_plan : { id: #{p.id}, anomaly_id: #{p.anomaly_id}, type: #{p.incident_type}, desc: #{p.descriptif}}"
+        end
+      end
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, deleted : { id: #{@anomalie.id}, statut: #{@anomalie.statut}, desc: #{@anomalie.descriptif}, date: #{@anomalie.date}}"
       @anomalie.delete
     end

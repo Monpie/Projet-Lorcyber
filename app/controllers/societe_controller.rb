@@ -8,16 +8,20 @@ class SocieteController < ApplicationController
 
   def create
     @current_user = get_current_user
-    @societe = Societe.new
-    @societe.nom_societe = params[:nom]
-    @societe.referent = params[:ref]
-    @societe.mail = params[:mail]
-    @societe.adresse = params[:adresse]
-    @societe.telephone = params[:tel]
-    @societe.save
+    if @current_user
+      if check_access "admin"
+        @societe = Societe.new
+        @societe.nom_societe = params[:nom]
+        @societe.referent = params[:ref]
+        @societe.mail = params[:mail]
+        @societe.adresse = params[:adresse]
+        @societe.telephone = params[:tel]
+        @societe.save
 
-    time = Time.now
-    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+      end
+    end
     redirect_to societe_path
   end
 
@@ -27,34 +31,43 @@ class SocieteController < ApplicationController
 
   def show
     @current_user = get_current_user
-    check_access "admin"
     if @current_user
-      @societe = Societe.find(params[:id])
-      time = Time.now
-     # $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+      if check_access "admin"
+        @societe = Societe.find(params[:id])
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+      end
     end
   end
 
   def delete
     @current_user = get_current_user
-    @societe = Societe.find(params[:id])
-    time = Time.now
-   # $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, deleted : { id: #{@societe.id}, nom_societe: #{@societe.nom_societe}, referent: #{@societe.referent}}"
-    @societe.delete
+    if @current_user
+      if check_access "admin"
+        @societe = Societe.find(params[:id])
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, deleted : { id: #{@societe.id}, nom_societe: #{@societe.nom_societe}, referent: #{@societe.referent}}"
+        @societe.delete
+      end
+    end
     redirect_to societe_path
   end
 
   def edit
     @current_user = get_current_user
-    @societe = Societe.find(params[:id])
-    @societe.nom_societe = params[:nom]
-    @societe.referent = params[:ref]
-    @societe.mail = params[:mail]
-    @societe.adresse = params[:adresse]
-    @societe.telephone = params[:tel]
-    @societe.save
-    time = Time.now
-    #$LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+    if @current_user
+      if check_access "admin"
+        @societe = Societe.find(params[:id])
+        @societe.nom_societe = params[:nom]
+        @societe.referent = params[:ref]
+        @societe.mail = params[:mail]
+        @societe.adresse = params[:adresse]
+        @societe.telephone = params[:tel]
+        @societe.save
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+      end
+    end
     redirect_to societe_path
   end
 
