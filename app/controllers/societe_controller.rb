@@ -12,25 +12,30 @@ class SocieteController < ApplicationController
     if check_access "admin"
       @societe = Societe.new(societe_params)
 
-    if @societe.save
-      flash[:notice] = "Société ajoutée avec succès"
-      flash[:color] = "valid"
-      redirect_to @societe
+      if @societe.save
+        flash[:notice] = "Société ajoutée avec succès"
+        flash[:color] = "valid"
 
-    else
-      flash[:notice] = "La société n'a pas pu être ajoutée : Paramètres incorrects"
-      flash[:color] = "invalid"
-      render "index"
-    end
+      #  redirect_to @societe
+
+      else
+        flash[:notice] = "La société n'a pas pu être ajoutée : Paramètres incorrects"
+        flash[:color] = "invalid"
+        #render "index"
+      end
 
     time = Time.now
     $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
     end
+    render :file => "societe/index.html.erb",layout: "layouts/application.html.erb"
+    #redirect_to societe_path
 
   end
 
   def index
     @current_user = get_current_user
+    render layout: "layouts/application.html.erb"
+
   end
 
   def show
@@ -40,6 +45,7 @@ class SocieteController < ApplicationController
         @societe = Societe.find(params[:id])
         time = Time.now
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+        render layout: "layouts/application.html.erb"
       end
     end
   end

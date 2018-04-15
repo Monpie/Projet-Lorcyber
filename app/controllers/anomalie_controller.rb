@@ -22,7 +22,8 @@ class AnomalieController < ApplicationController
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"
       end
     end
-    redirect_to anomalie_path
+    render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
+    #redirect_to anomalie_path
   end
 
   def index
@@ -31,6 +32,7 @@ class AnomalieController < ApplicationController
       time = Time.now
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
       @droits = Droit.find_each
+      render layout: "layouts/application.html.erb"
     end
   end
 
@@ -40,6 +42,7 @@ class AnomalieController < ApplicationController
       @anomalie = Anomalie.find(params[:id])
       time = Time.now
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+      render layout: "layouts/application.html.erb"
     else
       redirect_to anomalie_path
     end
@@ -72,14 +75,16 @@ class AnomalieController < ApplicationController
       @anomalie.alerte_type = nil
       @anomalie.save
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, alerte : false"
-      redirect_to anomalie_path
+      render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
+      #redirect_to anomalie_path
     else
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, alerte : true"
       @anomalie = Anomalie.find(params[:id])
       @anomalie.statut = "Incident"
       @anomalie.alerte_type = params[:type]
       @anomalie.save
-      redirect_to anomalie_path
+      render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
+      #redirect_to anomalie_path
     end
   end
 

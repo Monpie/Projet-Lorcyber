@@ -25,8 +25,10 @@ class PlanActionTypeController < ApplicationController
           @anomalie = Anomalie.find(params[:id])
           time = Time.now
           $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, plan_index : {  anomalie_id: #{@anomalie.id}}"
+          render layout: "layouts/application.html.erb"
         else
           @plans = PlanActionType.find_each
+          render layout: "layouts/application.html.erb"
         end
       else
         flash[:auth_error] = "Vous n'avez pas les droits requis pour accéder à cette page !"

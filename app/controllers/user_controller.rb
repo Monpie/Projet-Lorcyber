@@ -2,6 +2,7 @@ class UserController < ApplicationController
 
   def initialize
     @Utilisateurs = Utilisateurs.find_each
+    @droits = Droit.find_each
     if !$LOG
       $LOG = Log.new "#{Dir.home}/Documents/log.txt"
     end
@@ -18,7 +19,8 @@ class UserController < ApplicationController
       time = Time.now
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, new user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}, role : #{Droit.find(@utilisateur.droit_id).role}}"
     end
-    redirect_to user_path
+    render :file => "user/index.html.erb",layout: "layouts/application.html.erb"
+    #redirect_to user_path
   end
 
   def show
@@ -29,6 +31,7 @@ class UserController < ApplicationController
       check_access "admin"
       @utilisateur = Utilisateurs.find(params[:id])
       @droits = Droit.find_each
+      render layout: "layouts/application.html.erb"
     else
       redirect_to user_path
     end
@@ -38,7 +41,7 @@ class UserController < ApplicationController
     if get_current_user
       time = Time.now
       $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
-      @droits = Droit.find_each
+      render layout: "layouts/application.html.erb"
     end
   end
 
