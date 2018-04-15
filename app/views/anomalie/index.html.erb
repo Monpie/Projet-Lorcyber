@@ -9,8 +9,15 @@
       <form>
         <label for="descriptif">Descriptif de l'alerte :</label>
         <br/>
-        <textarea type="text" name="descriptif" id="descriptif" rows="5" cols="50"></textarea>
+        <textarea type="text" name="descriptif" id="descriptif" rows="10" cols="80"></textarea>
   <br/>
+        <label>Lier l'anomalie à la société : </label>
+        <select name="societe">
+          <% @societes.each do |s| %>
+            <option value="<%= s.id %>"><%= s.nom_societe %></option>
+          <% end %>
+        </select>
+        <br />
         <input type="submit" value="Valider"/>
       </form>
   <% end %>
@@ -21,6 +28,7 @@
       <th>Id</th>
       <th>Statut</th>
       <th>Type</th>
+      <th>Société</th>
       <th>Descriptif</th>
       <th>Date</th>
     </tr>
@@ -29,11 +37,12 @@
       <td><%= anomalie.id %></td>
       <td><%= anomalie.statut %></td>
       <td><%= anomalie.alerte_type %></td>
+      <td><%= Societe.find(anomalie.societe_id).nom_societe %></td>
       <td><%= anomalie.descriptif %></td>
       <td><%= anomalie.date %></td>
       <td>
         <% if anomalie.statut == "Incident" %>
-        <a href="/plan"><button>Editer plan action</button></a>
+        <a href="/plan?id=<%=anomalie.id%>"><button>Editer plan action</button></a>
 
         <% else %>
         <a href="/anomalie/show?id=<%=anomalie.id%>">

@@ -3,13 +3,34 @@
   <% if Droit.find(@current_user.droit_id).role == "admin" %>
     <h2>Page Societe</h2>
 
-    <h1>Créer societe</h1>
-    <%= form_tag "/societe/create", method: :post do %>
-      <form>
+    <h1>Créer société</h1>
+
+      <%= form_for :societe do |f| %>
+
+      <% if @societe && @societe.errors.any? %>
+        <h2><%= pluralize(@societe.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+        <ul>
+          <% @societe.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+
+        Nom : <%= f.text_field :nom_societe %><br />
+        Référent : <%= f.text_field :referent %><br />
+        Mail : <%= f.text_field :mail %><br />
+        Adresse : <%= f.text_area :adresse %><br />
+        Tel : <%= f.text_field :telephone %><br />
+
+  <%= f.submit %>
+      <% end %>
+
+
+  <!--
         <p>
           <label for="nom">Nom de la société</label>
           <input type="text" name="nom" id="nom" required />
-
           <br />
 
           <label for="ref">Référent technique de la société :</label>
@@ -35,7 +56,7 @@
           <input type="submit" value="Valider"/>
         </p>
       </form>
-    <% end %>
+      -->
 
 
     <table class="table table-hover">

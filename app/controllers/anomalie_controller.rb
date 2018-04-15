@@ -1,6 +1,7 @@
 class AnomalieController < ApplicationController
   def initialize
     @anomalies = Anomalie.find_each
+    @societes = Societe.find_each
     if !$LOG
       $LOG = Log.new "#{Dir.home}/Documents/log.txt"
     end
@@ -8,13 +9,19 @@ class AnomalieController < ApplicationController
 
   def create
     @current_user = get_current_user
-    @anomalie = Anomalie.new
-    @anomalie.statut = "Alerte"
-    @anomalie.descriptif = params[:descriptif]
-    @anomalie.date = Time.now
-    @anomalie.save
-    time = Time.now
-    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"
+
+    if @current_user
+      if check_access "admin"
+        @anomalie = Anomalie.new
+        @anomalie.statut = "Alerte"
+        @anomalie.descriptif = params[:descriptif]
+        @anomalie.date = Time.now
+        @anomalie.societe = Societe.find(params[:societe])
+        @anomalie.save
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"
+      end
+    end
     redirect_to anomalie_path
   end
 
