@@ -42354,3 +42354,49 @@ Processing by SocieteController#create as HTML
 Completed 200 OK in 13ms (Views: 5.4ms | ActiveRecord: 1.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-15 14:04:29 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (9.4ms)
+Completed 200 OK in 26ms (Views: 10.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:04:32 +0200
+Processing by AnomalieController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  Rendered anomalie/index.html.erb (11.1ms)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/anomalie/create" for 127.0.0.1 at 2018-04-15 14:04:37 +0200
+Processing by AnomalieController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MpesayZ+3MGsqGu27lHezCtJ9vkZeavhnT2IQQ8W5OXH0J5BQIyeUH35vht2ioMHbMOxIazYmdVDLzsd4Bu00w==", "descriptif"=>"", "societe"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 82ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:04:37 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  Rendered anomalie/index.html.erb (4.1ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
