@@ -14,10 +14,13 @@ Rails.application.routes.draw do
   get 'user/show' => 'user#show'
   get 'droit' => 'droit#index'
   get 'plan' => 'plan_action_type#index'
-
+  get 'plan' => 'plan_action_type#show'
   get 'societe', to: 'societe#index'
   get 'societe/show', to: 'societe#show'
   get 'societe/delete', to:  'societe#delete'
+
+  get 'plan/show' => 'plan_action_type#show'
+  post 'plan/create' => 'plan_action_type#create'
 
   post 'welcome/index' => 'welcome#connexion'
 
