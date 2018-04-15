@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.index ["societe_id"], name: "fk_rails_5711632fe0"
   end
 
-  create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "droits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "role"
     t.bigint "utilisateur_id"
     t.datetime "created_at", null: false
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.string "priorite"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "anomalie_id"
     t.bigint "anomaly_id"
     t.index ["anomaly_id"], name: "fk_rails_a4f81b585a"
   end
@@ -88,7 +87,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
   add_foreign_key "actions", "anomalies", column: "anomalie_id"
   add_foreign_key "actions", "plan_action_types"
   add_foreign_key "actions", "utilisateurs"
-  add_foreign_key "anomalies", "societes"
+  add_foreign_key "anomalies", "societes", on_update: :cascade, on_delete: :cascade
   add_foreign_key "droits", "utilisateurs"
   add_foreign_key "plan_action_types", "anomalies"
   add_foreign_key "utilisateurs", "droits"

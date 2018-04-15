@@ -51766,3 +51766,1211 @@ Processing by AnomalieController#index as HTML
 Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 3.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-04-15 14:12:54 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.5) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.5) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.5) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.5) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.5) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.5) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.5) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/method_override.rb:22:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.5) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.5) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.5) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT GET_LOCK('6668909700278373240', 0)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to AddAnomalieToPlan (20180413201052)
+  [1m[35m (520.2ms)[0m  [1m[35mALTER TABLE `plan_action_types` ADD `anomaly_id` bigint[0m
+  [1m[35m (691.1ms)[0m  [1m[35mALTER TABLE `plan_action_types` ADD CONSTRAINT `fk_rails_a4f81b585a`
+FOREIGN KEY (`anomaly_id`)
+  REFERENCES `anomalies` (`id`)
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20180413201052')[0m
+  [1m[35m (47.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('6668909700278373240')[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-04-15 14:13:13 +0200
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (8.4ms)
+Completed 200 OK in 26ms (Views: 9.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:13:15 +0200
+Processing by AnomalieController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  Rendered anomalie/index.html.erb (13.6ms)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:13:18 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (9.8ms)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/societe" for 127.0.0.1 at 2018-04-15 14:13:19 +0200
+Processing by SocieteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PPIdZ8LsvpF87gqgsNazGyKZi1sPhjk03KrhXvWZ0QhGbNQelrfDjsxg6zFAe3ydA1dmsQoxF1xjg1QicjLFzQ==", "societe"=>{"nom_societe"=>"", "referent"=>"", "mail"=>"", "adresse"=>"", "telephone"=>""}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `societes` WHERE `societes`.`nom_societe` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (5.5ms)
+Completed 200 OK in 17ms (Views: 5.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/user" for 127.0.0.1 at 2018-04-15 14:13:24 +0200
+Processing by UserController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering user/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` ORDER BY `droits`.`id` ASC LIMIT 1000[0m
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` ORDER BY `utilisateurs`.`id` ASC LIMIT 1000[0m
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 2 LIMIT 1[0m
+  Rendered user/index.html.erb (4.9ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/welcome/deconnexion" for 127.0.0.1 at 2018-04-15 14:13:28 +0200
+Processing by WelcomeController#deconnexion as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-15 14:13:28 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb
+  Rendered welcome/index.html.erb (0.6ms)
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/welcome/index" for 127.0.0.1 at 2018-04-15 14:13:29 +0200
+Processing by WelcomeController#connexion as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S94npSLRELPYM5pRWsvpXsDlp5/c4jg428nM/J4Jlc/peWIJYsXBjumAGF93iV5mMAsGbjK9qwHHcgXqK0ZIGQ==", "name"=>"admin", "password"=>"[FILTERED]"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`nom` = 'admin' AND `utilisateurs`.`password` = 'admin' ORDER BY `utilisateurs`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-04-15 14:13:29 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (1.4ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:16:02 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  Rendered anomalie/index.html.erb (9.0ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:16:16 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (5.1ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:16:19 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (1.7ms)
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:19:14 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.2ms)
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:19:17 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZInXlSK2EsZE4OI/3b9EGsLc6JT0l3lYdXluQ6Y+tkfwYheJn5RFeGWwzoyp6HcsLmWpVNnIU2IdVZJ+5kMZhg==", "id"=>"191", "nom"=>"re", "ref"=>"", "adresse"=>"", "mail"=>"", "tel"=>""}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `societes` WHERE `societes`.`nom_societe` = BINARY 're' AND (`societes`.`id` != 191) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 12ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:19:17 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (5.2ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/societe" for 127.0.0.1 at 2018-04-15 14:19:19 +0200
+Processing by SocieteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wrd/dJWYkHEn/S8gyXNsL5tQHL/ecsLpfJDX04pq2ge4KbYNwcPtbpdzzrE53qOpup7xVdvF7IHDuWKvDcHOwg==", "societe"=>{"nom_societe"=>"", "referent"=>"", "mail"=>"", "adresse"=>"", "telephone"=>""}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.9ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.8ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `societes` WHERE `societes`.`nom_societe` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.9ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.9ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (16.5ms)
+Completed 200 OK in 41ms (Views: 17.5ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:19:20 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.5ms)
+Completed 200 OK in 8ms (Views: 3.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:21:21 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.4ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:18 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+...d=( f.text_field (:nom_societe,  @societe.nom_societe) );@ou...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ')', expecting keyword_end
+...ciete,  @societe.nom_societe) );@output_buffer.safe_append='...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+app/views/societe/show.html.erb:42: syntax error, unexpected ')', expecting keyword_end
+app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:26 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (1.5ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+...d=( f.text_field (:nom_societe,  nom_societe) );@output_buff...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:29 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.9ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (1.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.8ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+...d=( f.text_field (:nom_societe,  :nom_societe) );@output_buf...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:30 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (1.3ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+...d=( f.text_field (:nom_societe,  :nom_societe) );@output_buf...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:39 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (0.9ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.3ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+...d=( f.text_field (:nom_societe, [:nom_societe]) );@output_bu...
+...                              ^
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;       end 
+                ^~~
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:84: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+              ^~~
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:88: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;     end 
+              ^~~
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:92: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;   end 
+            ^~~
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:96: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/societe/show.html.erb:42: syntax error, unexpected ',', expecting ')'
+app/views/societe/show.html.erb:49: syntax error, unexpected keyword_end, expecting ')'
+app/views/societe/show.html.erb:84: syntax error, unexpected keyword_end, expecting ')'
+app/views/societe/show.html.erb:88: syntax error, unexpected keyword_end, expecting ')'
+app/views/societe/show.html.erb:92: syntax error, unexpected keyword_end, expecting ')'
+app/views/societe/show.html.erb:94: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/societe/show.html.erb:96: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/societe/show?id=191" for 127.0.0.1 at 2018-04-15 14:22:49 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.7ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/societe/show?id=191&nom=re&ref=&adresse=&mail=&tel=" for 127.0.0.1 at 2018-04-15 14:23:12 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"191", "nom"=>"re", "ref"=>"", "adresse"=>"", "mail"=>"", "tel"=>""}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.7ms)
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:23:13 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zjqOhY6enojzjotnCtglewf1fFx+I/InclTyvrgwm2Za0U6ZM7zJNtLep9R+jxZN60w9nFN82B0aeA6D+E00pw==", "societe"=>{"nom_societe"=>"re", "referent"=>"", "mail"=>"", "adresse"=>"", "telephone"=>""}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.9ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (1.1ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.9ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 10ms (ActiveRecord: 2.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:23:16 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (3.2ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:23:18 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.8ms)
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:23:33 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.6ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:24:12 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.8ms)
+Completed 200 OK in 10ms (Views: 4.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:24:16 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.4ms)
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:24:44 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.6ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (16.2ms)
+Completed 200 OK in 25ms (Views: 17.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:31:16 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.9ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:31:56 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.8ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.8ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (5.3ms)
+Completed 200 OK in 17ms (Views: 7.2ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:31:58 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ylQnpfpQ7lFThiixu19qpwgVbcQTgOMuQT9U5JT4Batev+e5R3K573LWBALPCFmR5KwsBD7fyRQpE6jZ1IWqag==", "societe"=>{"referent"=>"42", "mail"=>"l@p", "adresse"=>"fzefze", "telephone"=>"45"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:09 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (4.3ms)
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/societe/show?id=193" for 127.0.0.1 at 2018-04-15 14:32:10 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.7ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:32:14 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"maV1Ay3KWtzi2xr/RN5OZxr7Car3HogkD3iVPesCMq8NTrUfkOgNYsOLNkwwiX1R9kJIatpBoh5nVGkAq3+dbg==", "societe"=>{"referent"=>"zefzef", "mail"=>"a@b", "adresse"=>"fzefze", "telephone"=>"45"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:27 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (3.7ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/societe/delete?id=191" for 127.0.0.1 at 2018-04-15 14:32:28 +0200
+Processing by SocieteController#delete as HTML
+  Parameters: {"id"=>"191"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 191 LIMIT 1[0m
+  [1m[35mSQL (60.3ms)[0m  [1m[31mDELETE FROM `societes` WHERE `societes`.`id` = 191[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 63ms (ActiveRecord: 60.9ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:28 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (3.1ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/societe/delete?id=192" for 127.0.0.1 at 2018-04-15 14:32:29 +0200
+Processing by SocieteController#delete as HTML
+  Parameters: {"id"=>"192"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 192 LIMIT 1[0m
+  [1m[35mSQL (35.4ms)[0m  [1m[31mDELETE FROM `societes` WHERE `societes`.`id` = 192[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 40ms (ActiveRecord: 36.5ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:29 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (5.1ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/societe/delete?id=193" for 127.0.0.1 at 2018-04-15 14:32:29 +0200
+Processing by SocieteController#delete as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (1.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.8ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 193 LIMIT 1[0m
+  [1m[35mSQL (30.2ms)[0m  [1m[31mDELETE FROM `societes` WHERE `societes`.`id` = 193[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 42ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:29 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (1.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.9ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (13.6ms)
+Completed 200 OK in 21ms (Views: 14.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/societe/delete?id=194" for 127.0.0.1 at 2018-04-15 14:32:31 +0200
+Processing by SocieteController#delete as HTML
+  Parameters: {"id"=>"194"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 194 LIMIT 1[0m
+  [1m[35mSQL (36.0ms)[0m  [1m[31mDELETE FROM `societes` WHERE `societes`.`id` = 194[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 40ms (ActiveRecord: 36.8ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:31 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (7.0ms)
+Completed 200 OK in 12ms (Views: 7.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/societe/delete?id=195" for 127.0.0.1 at 2018-04-15 14:32:32 +0200
+Processing by SocieteController#delete as HTML
+  Parameters: {"id"=>"195"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 195 LIMIT 1[0m
+  [1m[35mSQL (33.9ms)[0m  [1m[31mDELETE FROM `societes` WHERE `societes`.`id` = 195[0m
+Redirected to http://localhost:3000/societe
+Completed 302 Found in 38ms (ActiveRecord: 34.8ms)
+
+
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 14:32:32 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (8.3ms)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/societe" for 127.0.0.1 at 2018-04-15 14:32:40 +0200
+Processing by SocieteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1PJd4yD8cOLmg22Q10uGKRcaP5OTl8s4BPU+bFJPgW6ubJSadKcN/VYNjAEn5kmvNtTSeZYg5VC73IsQ1eSVqw==", "societe"=>{"nom_societe"=>"AAA", "referent"=>"BBB", "mail"=>"CCC", "adresse"=>"DDD", "telephone"=>"EEE4"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `societes` WHERE `societes`.`nom_societe` = BINARY 'AAA' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (7.0ms)
+Completed 200 OK in 25ms (Views: 8.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/societe" for 127.0.0.1 at 2018-04-15 14:32:49 +0200
+Processing by SocieteController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3ZkvWlbKPo7n+UN/cZsX30P9UAlUAYbc1Kzjqrl47x+nB+YjApFDkVd3ou6BNthZYjO941G2qLRrhVbWPtP72g==", "societe"=>{"nom_societe"=>"AAA", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (2.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.8ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM `societes` WHERE `societes`.`nom_societe` = BINARY 'AAA' LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `societes` (`nom_societe`, `referent`, `mail`, `adresse`, `telephone`, `created_at`, `updated_at`) VALUES ('AAA', 'BBB', 'CCC@cc.fr', 'DDD', 444, '2018-04-15 12:32:49', '2018-04-15 12:32:49')[0m
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/societe.196
+Completed 302 Found in 67ms (ActiveRecord: 43.2ms)
+
+
+Started GET "/societe.196" for 127.0.0.1 at 2018-04-15 14:32:49 +0200
+Processing by SocieteController#index as 
+  [1m[36mUtilisateurs Load (0.9ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.9ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.9ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (12.5ms)
+Completed 200 OK in 37ms (Views: 20.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:32:52 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:35:32 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfLs6q3oMYg2nb4l4xYlnwwvEic2fR35kmMR/erfaHutGSz2EMpmNhfNkpaXQRap4JZT5xsiN8P6T+3AqqLHug==", "societe"=>{"referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:37:29 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfLs6q3oMYg2nb4l4xYlnwwvEic2fR35kmMR/erfaHutGSz2EMpmNhfNkpaXQRap4JZT5xsiN8P6T+3AqqLHug==", "societe"=>{"referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe/" for 127.0.0.1 at 2018-04-15 14:37:31 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (3.0ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:37:33 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.6ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (19.4ms)
+Completed 200 OK in 26ms (Views: 20.7ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:37:34 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t0BJy3Fuxa8uaGPBJuInBR8ZmpaGAUt/wrA+wb1mGdMjq4nXzEySEQ84T3JStRQz86DbVqteYUWqnML8/Ru2Eg==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 4ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:37:44 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.3ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:38:31 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E3iVbkiec4Cgy15PkBb8CmGthvmdOkcH+C+kQEDnETGHk1Vy9bwkPoGbcvzkQc88jRTHObBlbT2QA1h9AJq+8A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (1.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.8ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.9ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 10ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:41:45 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E3iVbkiec4Cgy15PkBb8CmGthvmdOkcH+C+kQEDnETGHk1Vy9bwkPoGbcvzkQc88jRTHObBlbT2QA1h9AJq+8A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 18ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:41:55 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E3iVbkiec4Cgy15PkBb8CmGthvmdOkcH+C+kQEDnETGHk1Vy9bwkPoGbcvzkQc88jRTHObBlbT2QA1h9AJq+8A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 16ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:42:08 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E3iVbkiec4Cgy15PkBb8CmGthvmdOkcH+C+kQEDnETGHk1Vy9bwkPoGbcvzkQc88jRTHObBlbT2QA1h9AJq+8A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `nom_societe=' for nil:NilClass):
+  
+app/controllers/societe_controller.rb:66:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:42:20 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E3iVbkiec4Cgy15PkBb8CmGthvmdOkcH+C+kQEDnETGHk1Vy9bwkPoGbcvzkQc88jRTHObBlbT2QA1h9AJq+8A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"DDD", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 11ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:63:in `edit'
+Started GET "/societe/" for 127.0.0.1 at 2018-04-15 14:43:50 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (12.6ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:43:51 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.0ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:43:57 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YW21PssHGO8pSYDj0Qo5SUmRYI00u6Pj8RLLeHjYJT31hnUidiVPUQgZrFClXQp/pSghTRnkidmZPjdFOKWK/A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"ZAADZADAZ", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:44:05 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YW21PssHGO8pSYDj0Qo5SUmRYI00u6Pj8RLLeHjYJT31hnUidiVPUQgZrFClXQp/pSghTRnkidmZPjdFOKWK/A==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"ZAADZADAZ", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:44:07 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  Rendered societe/show.html.erb (1.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/home/coco/ruby/Projet-Lorcyber/app/views/societe/show.html.erb:63: syntax error, unexpected keyword_ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/societe/show.html.erb:63: syntax error, unexpected keyword_ensure, expecting end-of-input
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:45:22 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (1.7ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:45:25 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"68NQ4g3HMqiV5Ckvc1lHIPjQtrmTQhcN+hmE+AvbTdF/KJD+sOVlFrS0BZwHDnQWFGn3eb4dPTeSNXjFS6biEA==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"ZAADZADAZ", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 4ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started POST "/societe/show" for 127.0.0.1 at 2018-04-15 14:50:47 +0200
+Processing by SocieteController#edit as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"68NQ4g3HMqiV5Ckvc1lHIPjQtrmTQhcN+hmE+AvbTdF/KJD+sOVlFrS0BZwHDnQWFGn3eb4dPTeSNXjFS6biEA==", "societe"=>{"id"=>"196", "referent"=>"BBB", "mail"=>"CCC@cc.fr", "adresse"=>"ZAADZADAZ", "telephone"=>"444"}, "commit"=>"Save Societe"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = NULL LIMIT 1[0m
+Completed 404 Not Found in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Societe with 'id'=):
+  
+app/controllers/societe_controller.rb:65:in `edit'
+Started GET "/societe/" for 127.0.0.1 at 2018-04-15 14:50:50 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (2.8ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:50:53 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.9ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (1.1ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.6ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.9ms)
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 14:51:03 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (2.1ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2018-04-15 14:51:55 +0200
+Processing by WelcomeController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering welcome/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendered welcome/index.html.erb (2.8ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/plan" for 127.0.0.1 at 2018-04-15 14:52:00 +0200
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  [1m[36mPlanActionType Load (0.5ms)[0m  [1m[34mSELECT  `plan_action_types`.* FROM `plan_action_types` ORDER BY `plan_action_types`.`id` ASC LIMIT 1000[0m
+  Rendered plan_action_type/index.html.erb (9.1ms)
+Completed 200 OK in 33ms (Views: 10.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:52:24 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.3ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  Rendered anomalie/index.html.erb (4.2ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/anomalie/create" for 127.0.0.1 at 2018-04-15 14:52:28 +0200
+Processing by AnomalieController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9zBaQn9cir2xPiQ4mb/x0zDZWMNHXC7xpBk6GU6igtgCd2hoGa7ILGBv8ZUBZKwYd1MfG/L9HMV6C4lFoa/S7g==", "descriptif"=>"knkjnkj", "societe"=>"196"}
+  [1m[36mUtilisateurs Load (0.9ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `anomalies` (`statut`, `date`, `descriptif`, `created_at`, `updated_at`, `societe_id`) VALUES ('Alerte', '2018-04-15 12:52:28', 'knkjnkj', '2018-04-15 12:52:28', '2018-04-15 12:52:28', 196)[0m
+  [1m[35m (33.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 60ms (ActiveRecord: 35.7ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:52:29 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.8ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.5ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.9ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendered anomalie/index.html.erb (10.2ms)
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/anomalie/show?id=12" for 127.0.0.1 at 2018-04-15 14:52:31 +0200
+Processing by AnomalieController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+  Rendering anomalie/show.html.erb
+  Rendered anomalie/show.html.erb (2.9ms)
+Completed 200 OK in 275ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/anomalie/show" for 127.0.0.1 at 2018-04-15 14:52:35 +0200
+Processing by AnomalieController#alerte as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vjaewRifPoF0ev7SdSessHXO3I+r0wLAo1HkVCAc4JRK6F9ZcOtX+eXBiKmVMUqbUOhcBzRTVbq+8cwRPkX0jw==", "id"=>"12", "realAlerte"=>"yes", "type"=>"phishing"}
+  [1m[36mUtilisateurs Load (0.7ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.7ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSociete Load (0.5ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `anomalies` SET `statut` = 'Incident', `alerte_type` = 'phishing', `updated_at` = '2018-04-15 12:52:35' WHERE `anomalies`.`id` = 12[0m
+  [1m[35m (38.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/anomalie
+Completed 302 Found in 58ms (ActiveRecord: 41.1ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 14:52:35 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.5ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.7ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  [1m[36mSociete Load (0.8ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendered anomalie/index.html.erb (10.3ms)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/plan?id=12" for 127.0.0.1 at 2018-04-15 14:53:08 +0200
+  [1m[36mAnomalie Load (0.4ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDroit Load (0.2ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (1.6ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/plan/create" for 127.0.0.1 at 2018-04-15 14:54:28 +0200
+  [1m[36mAnomalie Load (0.4ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N8mtHRAZRvnv+3TTFiJ/Iu6eNyCqIFvYC0mXYpHplarOQT1AfSSbfJyaOg2Xc7GdcBRAIVtwhr2XUx3/TajD1g==", "descriptif"=>"Un descriptif", "actions"=>"Je sais pas\r\n\r\nAutre chose", "anomalie_id"=>"12", "date"=>"2018-04-13", "priorite"=>"Très urgent"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+Redirected to http://localhost:3000/plan?id=12
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/plan?id=12" for 127.0.0.1 at 2018-04-15 14:54:28 +0200
+  [1m[36mAnomalie Load (0.7ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#index as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUtilisateurs Load (0.4ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE Utilisateurs Load (0.0ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDroit Load (0.6ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.5ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+  Rendering plan_action_type/index.html.erb
+  Rendered plan_action_type/index.html.erb (1.6ms)
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/plan/create" for 127.0.0.1 at 2018-04-15 14:54:49 +0200
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KC8tRT6u5vJSaRe9QYP42IfONwTsrUtAZI6xNPAsjNXRp70YU5M7dyEIWWPA0jZnGURABR39liX4lDupLG3aqQ==", "descriptif"=>"Une descriptif du problème", "actions"=>"Je sais pas\r\n\r\nQQ chose", "anomalie_id"=>"12", "date"=>"2018-04-20", "priorite"=>"Très urgent"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.2ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `incident_type=' for #<PlanActionType:0x00007fd294be6f18>):
+  
+app/controllers/plan_action_type_controller.rb:70:in `create'
+Started POST "/plan/create" for 127.0.0.1 at 2018-04-15 14:59:20 +0200
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KC8tRT6u5vJSaRe9QYP42IfONwTsrUtAZI6xNPAsjNXRp70YU5M7dyEIWWPA0jZnGURABR39liX4lDupLG3aqQ==", "descriptif"=>"Une descriptif du problème", "actions"=>"Je sais pas\r\n\r\nQQ chose", "anomalie_id"=>"12", "date"=>"2018-04-20", "priorite"=>"Très urgent"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `incident_type=' for #<PlanActionType:0x00007fd28c046670>):
+  
+app/controllers/plan_action_type_controller.rb:70:in `create'
+Started POST "/plan/create" for 127.0.0.1 at 2018-04-15 14:59:35 +0200
+  [1m[36mAnomalie Load (0.4ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+Processing by PlanActionTypeController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KC8tRT6u5vJSaRe9QYP42IfONwTsrUtAZI6xNPAsjNXRp70YU5M7dyEIWWPA0jZnGURABR39liX4lDupLG3aqQ==", "descriptif"=>"Une descriptif du problème", "actions"=>"Je sais pas\r\n\r\nQQ chose", "anomalie_id"=>"12", "date"=>"2018-04-20", "priorite"=>"Très urgent"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` WHERE `anomalies`.`id` = 12 LIMIT 1[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `incident_type=' for #<PlanActionType:0x0000555dec2cfbb0>):
+  
+app/controllers/plan_action_type_controller.rb:70:in `create'
+Started GET "/societe" for 127.0.0.1 at 2018-04-15 15:04:28 +0200
+Processing by SocieteController#index as HTML
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering societe/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.4ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  Rendered societe/index.html.erb (4.7ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/societe/show?id=196" for 127.0.0.1 at 2018-04-15 15:04:30 +0200
+Processing by SocieteController#show as HTML
+  Parameters: {"id"=>"196"}
+  [1m[36mUtilisateurs Load (0.3ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  [1m[36mDroit Load (0.3ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendering societe/show.html.erb
+  [1m[36mCACHE Droit Load (0.0ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered societe/show.html.erb (3.1ms)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/anomalie" for 127.0.0.1 at 2018-04-15 15:06:19 +0200
+Processing by AnomalieController#index as HTML
+  [1m[36mUtilisateurs Load (0.2ms)[0m  [1m[34mSELECT  `utilisateurs`.* FROM `utilisateurs` WHERE `utilisateurs`.`id` = 1 LIMIT 1[0m
+  Rendering anomalie/index.html.erb
+  [1m[36mDroit Load (0.4ms)[0m  [1m[34mSELECT  `droits`.* FROM `droits` WHERE `droits`.`id` = 1 LIMIT 1[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` ORDER BY `societes`.`id` ASC LIMIT 1000[0m
+  [1m[36mAnomalie Load (0.3ms)[0m  [1m[34mSELECT  `anomalies`.* FROM `anomalies` ORDER BY `anomalies`.`id` ASC LIMIT 1000[0m
+  [1m[36mSociete Load (0.2ms)[0m  [1m[34mSELECT  `societes`.* FROM `societes` WHERE `societes`.`id` = 196 LIMIT 1[0m
+  Rendered anomalie/index.html.erb (4.8ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 1.4ms)
+
+

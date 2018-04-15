@@ -2,70 +2,59 @@
   <% if Droit.find(@current_user.droit_id).role == "admin" %>
     <h1>Edition société</h1>
     <%= link_to 'Back', societe_path %>
+
     <h2>Coordonnées actuelles</h2>
-    <p><label>Nom de la société</label>
+    <p><label>Nom de la société : </label>
       <%= @societe.nom_societe %>
     </p>
 
-    <p><label>Référent technique de la société :</label>
+    <p><label>Référent technique de la société : </label>
       <%= @societe.referent %>
     </p>
 
-    <p><label>Adresse société</label>
+    <p><label>Adresse société : </label>
       <%= @societe.adresse %>
     </p>
 
-    <p><label>Mail</label>
+    <p><label>Mail : </label>
       <%= @societe.mail %>
     </p>
 
-    <p><label>Téléphone</label>
+    <p><label>Téléphone : </label>
       <%= @societe.telephone %>
     </p>
 
     <h2>Editer un champ</h2>
 
-    <%= form_tag "/societe/show", method: :post do %>
 
-      <form>
-        <p>
-          <input type="hidden" name="id" value="<%= @societe.id %>"/>
+      <%= form_for :societe, method: :post do |f| %>
 
-          <label for="nom">Nom de la société</label>
-          <input type="text" name="nom" id="nom" placeholder="<%= @societe.nom_societe %>" value="<%= @societe.nom_societe %>" required />
+        <% if @societe && @societe.errors.any? %>
+          <h2><%= pluralize(@societe.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+          <ul>
+            <% @societe.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+          </div>
+        <% end %>
 
-          <br/>
+        <%= f.hidden_field :id %>
+        Nom : <%= f.text_field (:nom_societe), disabled: true %><br />
+        Référent : <%= f.text_field :referent %><br />
+        Mail : <%= f.email_field :mail %><br />
+        Adresse : <%= f.text_area(:adresse, size:"50x6") %><br />
+        Tel : <%= f.telephone_field :telephone %><br />
 
-          <label for="ref">Référent technique de la société :</label>
-          <input type="text" name="ref" id="ref" placeholder="<%= @societe.referent %>" value="<%= @societe.referent %>"/>
+        <%= f.submit %>
+      <% end %>
 
-          <br/>
 
-          <label for="adresse">Adresse société</label>
-          <br/>
-          <textarea type="text" name="adresse" id="adresse" rows="5" cols="20"placeholder="<%= @societe.adresse %>" ><%= @societe.adresse %></textarea>
-
-          <br/>
-
-          <label for="mail">Mail</label>
-          <input type="email" name="mail" id="mail" placeholder="<%= @societe.mail %>" value="<%= @societe.mail %>"/>
-
-          <br/>
-
-          <label for="tel">Téléphone</label>
-          <input type="tel" name="tel" id="tel" placeholder="<%= @societe.telephone %>" value="<%= @societe.telephone %>"/>
-
-          <br/>
-          <input type="submit" value="Valider"/>
-        </p>
-      </form>
-
-    <% end %>
-    <% else %>
+  <% else %>
     <p>Vous n'avez pas les droits requis pour accéder à cette page !</p>
     <%= link_to 'Accueil', welcome_index_path %>
-    <% end %>
-  <% else %>
+  <% end %>
+<% else %>
   <p>Veuillez vous connecter pour accéder à cette page !</p>
   <%= link_to 'Accueil', welcome_index_path %>
-  <% end %>
+<% end %>
