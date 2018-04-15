@@ -22,11 +22,14 @@ class SocieteController < ApplicationController
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
       end
     end
-    redirect_to societe_path
+    render :file => "societe/index.html.erb",layout: "layouts/application.html.erb"
+    #redirect_to societe_path
   end
 
   def index
     @current_user = get_current_user
+    render layout: "layouts/application.html.erb"
+
   end
 
   def show
@@ -36,6 +39,7 @@ class SocieteController < ApplicationController
         @societe = Societe.find(params[:id])
         time = Time.now
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}"
+        render layout: "layouts/application.html.erb"
       end
     end
   end

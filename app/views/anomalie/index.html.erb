@@ -1,15 +1,15 @@
-
+<%= stylesheet_link_tag 'anomalie' %>
 <% if @current_user %>
 
 <% if Droit.find(@current_user.droit_id).role == "admin" %>
-<h2>Page Anomalie</h2>
-
+<h1>Page Anomalie</h1>
+<h2>Créer anomalie</h2>
 <div><%= flash[:info] %></div>
-<%= session[:user_id] %>
 <br>
 
+
+
 <p>
-  <h1>Créer anomalie</h1>
   <%= form_tag "/anomalie/create", method: :post do %>
   <p>
     <label>Descriptif de l'alerte :

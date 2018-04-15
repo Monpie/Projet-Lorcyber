@@ -1,13 +1,15 @@
+<%= stylesheet_link_tag 'welcome' %>
+
 <h1>Bienvenue sur le site Lorcyber</h1>
 <h1>Connexion</h1>
 <% if @current_user %>
   <p>Bienvenue <%= @current_user.nom %> !</p>
-  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
   <h2>Panneau d'administration</h2>
-  <%= link_to 'anomalie', anomalie_path %>
-  <br />
-  <%= link_to 'societe', societe_path %>
-  <br />
+<p>
+  <%= link_to 'Anomalie', anomalie_path %>
+</p>
+  <%= link_to 'Societe', societe_path %>
+  <br>
 
   <% if Droit.find(@current_user.droit_id).role == "admin" %>
   <p>

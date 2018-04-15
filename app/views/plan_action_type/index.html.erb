@@ -7,67 +7,69 @@
 <% end %>
 <%= flash[:info] %>
 <%= flash[:auth_error]%>
-<% unless @anomalie %>
-  <p>Tous les plans d'actions</p>
-  <table class="table table-hover">
-    <tr>
-      <th>Id</th>
-      <th>Type</th>
-      <th>Descriptif</th>
-      <th>Temps restant</th>
-      <th>Priorité</th>
-      <th>Anomalie lié</th>
-    </tr>
-  <% @plans.each do |p| %>
-    <tr>
-      <td><%= p.id %></td>
-      <td><%= p.incident_type%></td>
-      <td><%= p.descriptif%></td>
-      <td><%= p.temps%></td>
-      <td><%= p.priorite%></td>
-      <td><%= link_to p.anomaly_id, anomalie_show_url << "?id=#{p.anomaly_id}"%> (Type = <%=Anomalie.find(p.anomaly_id).alerte_type%>)</td>
-    </tr>
-  <% end %>
-</table>
-<% else %>
-  <h1>Plan d'action à effectuer</h1>
-  <% if  @types.include? @anomalie.alerte_type %>
-    <p>Type :<%=@anomalie.alerte_type%></p>
-    <p>Date de l'anomalie : <%=@anomalie.date%></p>
-    <p>Date avant laquelle l'anomalie doit être traité :
-    <%7.times do%>
-      <% @anomalie.date = @anomalie.date.next_day%>
-    <% end%>
-    <%=@anomalie.date%>
-  </p>
-    <p>Description de l'anomalie : <%=@anomalie.descriptif%></p>
-    <%= form_tag "/plan/create", method: :post do %>
-    <p>
-      <label for="descriptif">Descriptif du problème (Peut-être différent de celle de l'incident) :</label>
-      <br>
-      <textarea name="descriptif" cols="50" rows="5" value="<%=@anomalie.descriptif%>"><%=@anomalie.descriptif%></textarea>
+<% if Droit.find(@current_user.droit_id).role  == "admin"%>
+  <% unless @anomalie %>
+    <h1>Tous les plans d'actions</h1>
+    <table class="table table-hover">
+      <tr>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Descriptif</th>
+        <th>Temps restant</th>
+        <th>Priorité</th>
+        <th>Anomalie lié</th>
+      </tr>
+    <% @plans.each do |p| %>
+      <tr>
+        <td><%= p.id %></td>
+        <td><%= p.incident_type%></td>
+        <td><%= p.descriptif%></td>
+        <td><%= p.temps%></td>
+        <td><%= p.priorite%></td>
+        <td><%= link_to p.anomaly_id.to_s<<" (Type = #{Anomalie.find(p.anomaly_id).alerte_type})", anomalie_show_url << "?id=#{p.anomaly_id}"%></td>
+      </tr>
+    <% end %>
+  </table>
+  <% else %>
+    <h1>Plan d'action à effectuer</h1>
+    <% if  @types.include? @anomalie.alerte_type %>
+      <p>Type :<%=@anomalie.alerte_type%></p>
+      <p>Date de l'anomalie : <%=@anomalie.date%></p>
+      <p>Date avant laquelle l'anomalie doit être traité :
+      <%7.times do%>
+        <% @anomalie.date = @anomalie.date.next_day%>
+      <% end%>
+      <%=@anomalie.date%>
     </p>
-    <p>
-      <label for="actions">Actions à mener : </label>
-      <textarea name="actions"></textarea>
-    </p>
-    <input type="hidden" name="anomalie_id" value="<%=@anomalie.id%>"/>
-    <%= flash[:date_error]%>
-    <p>
-      <label>Date limite</label>
-      <input type="date" name="date"/>
-    </p>
-    <p>
-      <label>Priorité de traitement :</label>
-      <select name="priorite">
-        <option value="Très urgent">Très urgent</option>
-        <option value="Urgent" selected>Urgent</option>
-        <option value="Non urgent">Non urgent</option>
-      </select>
-    </p>
-    <input type="submit" value="Générer"/>
-  <% end %>
-<%= link_to 'Générer', plan_show_url<<"?id=#{@anomalie.id}" %>
+      <p>Description de l'anomalie : <%=@anomalie.descriptif%></p>
+      <%= form_tag "/plan/create", method: :post do %>
+      <p>
+        <label for="descriptif">Descriptif du problème (Peut-être différent de celle de l'incident) :</label>
+        <br>
+        <textarea name="descriptif" cols="50" rows="5" value="<%=@anomalie.descriptif%>"><%=@anomalie.descriptif%></textarea>
+      </p>
+      <p>
+        <label for="actions">Actions à mener : </label>
+        <textarea name="actions"></textarea>
+      </p>
+      <input type="hidden" name="anomalie_id" value="<%=@anomalie.id%>"/>
+      <%= flash[:date_error]%>
+      <p>
+        <label>Date limite</label>
+        <input type="date" name="date"/>
+      </p>
+      <p>
+        <label>Priorité de traitement :</label>
+        <select name="priorite">
+          <option value="Très urgent">Très urgent</option>
+          <option value="Urgent" selected>Urgent</option>
+          <option value="Non urgent">Non urgent</option>
+        </select>
+      </p>
+      <input type="submit" value="Générer"/>
+    <% end %>
+  <%= link_to 'Générer', plan_show_url<<"?id=#{@anomalie.id}" %>
 
+    <% end %>
   <% end %>
 <% end %>

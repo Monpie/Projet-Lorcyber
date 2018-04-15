@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
   def index
     if session[:user_id]
       @current_user = Utilisateurs.find(session[:user_id])
+      render layout: "layouts/application.html.erb"
     end
   end
 
@@ -24,11 +25,13 @@ class WelcomeController < ApplicationController
       #flash[:info] = request.fullpath #Récupère seulement la route
       #flash[:info] = request.env['PATH_INFO'] #Meme chose que fullpath
       #request.original_url #Récupère l'URL original complète
-      redirect_to root_path
+      render :file => welcome_index_path, layout: "layouts/application.html.erb"
+      #redirect_to root_path
     else
       session[:user_id] = nil
       flash[:info] = "Échec de la connexion"
-      redirect_to "/welcome/index"
+      render :file => welcome_index_path, layout: "layouts/application.html.erb"
+      #redirect_to "/welcome/index"
     end
   end
 
@@ -37,7 +40,7 @@ class WelcomeController < ApplicationController
       session.delete(:user_id)
       @current_user = nil
     end
-
-    redirect_to root_path
+    render :file => welcome_index_path, layout: "layouts/application.html.erb"
+    #redirect_to root_path
   end
 end
