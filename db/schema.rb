@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180413201052) do
 
-  create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
     t.text "descriptif"
     t.bigint "anomalie_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.index ["utilisateur_id"], name: "fk_rails_3a407e4689"
   end
 
-  create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "anomalies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "statut"
     t.string "alerte_type"
     t.datetime "date"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.index ["utilisateur_id"], name: "index_droits_on_utilisateur_id"
   end
 
-  create_table "historiques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "historiques", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
     t.text "evenements"
     t.string "utilisateur"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "plan_action_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "plan_action_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "type"
     t.text "descriptif"
     t.string "liste_action"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.index ["anomaly_id"], name: "fk_rails_a4f81b585a"
   end
 
-  create_table "societes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "societes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nom_societe"
     t.string "referent"
     t.string "mail"
@@ -75,11 +75,12 @@ ActiveRecord::Schema.define(version: 20180413201052) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "utilisateurs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "nom"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "role"
     t.bigint "droit_id"
     t.index ["droit_id"], name: "fk_rails_81397231ea"
   end

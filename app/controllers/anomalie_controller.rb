@@ -9,13 +9,14 @@ class AnomalieController < ApplicationController
 
   def create
     @current_user = get_current_user
+
     if @current_user
       if check_access "admin"
         @anomalie = Anomalie.new
         @anomalie.statut = "Alerte"
         @anomalie.descriptif = params[:descriptif]
         @anomalie.date = Time.now
-        @anomalie.societe = Societe.find(1)
+        @anomalie.societe = Societe.find(params[:societe])
         @anomalie.save
         time = Time.now
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"

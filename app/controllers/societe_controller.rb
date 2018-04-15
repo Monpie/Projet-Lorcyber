@@ -1,4 +1,5 @@
 class SocieteController < ApplicationController
+
   def initialize
     @societes = Societe.find_each
     if !$LOG
@@ -8,22 +9,27 @@ class SocieteController < ApplicationController
 
   def create
     @current_user = get_current_user
-    if @current_user
-      if check_access "admin"
-        @societe = Societe.new
-        @societe.nom_societe = params[:nom]
-        @societe.referent = params[:ref]
-        @societe.mail = params[:mail]
-        @societe.adresse = params[:adresse]
-        @societe.telephone = params[:tel]
-        @societe.save
+    if check_access "admin"
+      @societe = Societe.new(societe_params)
 
-        time = Time.now
-        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
+      if @societe.save
+        flash[:notice] = "Société ajoutée avec succès"
+        flash[:color] = "valid"
+
+      #  redirect_to @societe
+
+      else
+        flash[:notice] = "La société n'a pas pu être ajoutée : Paramètres incorrects"
+        flash[:color] = "invalid"
+        #render "index"
       end
+
+    time = Time.now
+    $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@societe.id}}"
     end
     render :file => "societe/index.html.erb",layout: "layouts/application.html.erb"
     #redirect_to societe_path
+
   end
 
   def index
@@ -46,6 +52,7 @@ class SocieteController < ApplicationController
 
   def delete
     @current_user = get_current_user
+
     if @current_user
       if check_access "admin"
         @societe = Societe.find(params[:id])
@@ -90,5 +97,9 @@ class SocieteController < ApplicationController
       end
     end
     return bool
+  end
+
+  def societe_params
+    params.require(:societe).permit(:nom_societe, :referent, :mail, :adresse, :telephone)
   end
 end

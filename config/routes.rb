@@ -26,8 +26,10 @@ Rails.application.routes.draw do
 
   post 'anomalie/show' => 'anomalie#alerte'
   post 'anomalie/create' => 'anomalie#create'
+
   post 'societe/show' => 'societe#edit'
-  post 'societe/create' => 'societe#create'
+  post 'societe' => 'societe#create'
+
   post 'user/edit' => 'user#edit'
   post 'user/create' => 'user#create'
   post 'droit/create' => 'droit#create'
