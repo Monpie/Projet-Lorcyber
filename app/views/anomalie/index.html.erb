@@ -7,8 +7,23 @@
 <div><%= flash[:info] %></div>
 <br>
 
+<%= form_for :anomalie do |f| %>
+    <% if @anomalie && @anomalie.errors.any? %>
+      <h2><%= pluralize(@anomalie.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+      <ul>
+        <% @anomalie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
+      Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
+      <label>Droit de l'utilisateur</label>
+      <%= collection_select :anomalie, :societe_id, @societes, :id, :nom_societe %>
+<%= f.submit %>
+<% end %>
 
-
+<!--
 <p>
     <%= form_tag "/anomalie/create", method: :post do %>
       <form>
@@ -26,6 +41,7 @@
         <input type="submit" value="Valider"/>
       </form>
   <% end %>
+-->
 </p>
     <h2>Liste anomalies</h2>
   <table class="table table-hover">
@@ -60,7 +76,6 @@
       </td>
     </tr>
     <% end %>
-
   </table>
 
   <%= link_to 'Back', welcome_index_path %>

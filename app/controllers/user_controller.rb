@@ -8,7 +8,7 @@ class UserController < ApplicationController
     end
   end
 
-  def create
+=begin  def create
     @current_user = get_current_user
     if check_password_security
       @utilisateur = Utilisateurs.new
@@ -21,6 +21,24 @@ class UserController < ApplicationController
     end
     render :file => "user/index.html.erb",layout: "layouts/application.html.erb"
     #redirect_to user_path
+  end
+=end
+  def create
+    get_current_user
+
+    if new_check_access "admin"
+      @utilisateur = Utilisateurs.new(user_params)
+      if @utilisateur.save
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, new user : { id: #{@utilisateur.id}, droit : #{Droit.find(@utilisateur.droit_id).role}}"
+        flash[:notice] = "Utilisateur ajoutée avec succès"
+        flash[:color] = "valid"
+      else
+        flash[:notice] = "L'utilisateur n'a pas pu être ajoutée : Paramètres incorrects"
+        flash[:color] = "invalid"
+      end
+      render :file => "user/index.html.erb",layout: "layouts/application.html.erb"
+    end
   end
 
   def show
@@ -46,7 +64,20 @@ class UserController < ApplicationController
   end
 
   def edit
-    if get_current_user
+    get_current_user
+    if new_check_access "admin"
+      @utilisateur = Utilisateurs.find(user_params[:id])
+      if @utilisateur.update(user_params)
+          time = Time.now
+          $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}, role : #{Droit.find(@utilisateur.droit_id).role}}"
+          #flash[:notice] = "Utilisateur ajoutée avec succès"
+          redirect_to user_path
+        else
+          #flash[:notice] = "L'utilisateur n'a pas pu être ajoutée : Paramètres incorrects"
+          render :file => "user/show.html.erb",layout: "layouts/application.html.erb"
+      end
+    end
+=begin    if get_current_user
       if new_check_access("admin")
         @utilisateur = Utilisateurs.find(params[:id])
         unless last_admin?(@utilisateur)
@@ -59,7 +90,10 @@ class UserController < ApplicationController
       end
     end
     redirect_to user_path
+=end
   end
+
+
 
   def delete
     if get_current_user
@@ -77,6 +111,7 @@ class UserController < ApplicationController
     end
     redirect_to user_path
   end
+
 
   private
   def get_current_user
@@ -136,5 +171,9 @@ class UserController < ApplicationController
       end
     end
     return bool
+  end
+
+  def user_params
+    params.require(:utilisateur).permit(:id,:nom, :password, :droit_id)
   end
 end

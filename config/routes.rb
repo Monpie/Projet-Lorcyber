@@ -25,13 +25,13 @@ Rails.application.routes.draw do
   post 'welcome/index' => 'welcome#connexion'
 
   post 'anomalie/show' => 'anomalie#alerte'
-  post 'anomalie/create' => 'anomalie#create'
-
+  post 'anomalie' => 'anomalie#create'
+  post 'user/show' => 'user#edit'
   post 'societe/show' => 'societe#edit'
   post 'societe' => 'societe#create'
-
-  post 'user/edit' => 'user#edit'
-  post 'user/create' => 'user#create'
+  post 'user' => 'user#create'
+#  post 'user/edit' => 'user#edit'
+#  post 'user/create' => 'user#create'
   post 'droit/create' => 'droit#create'
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

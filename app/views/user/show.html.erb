@@ -1,6 +1,24 @@
 <h1>Gestion des utilisateurs</h1>
 
-<h1>Créer anomalie</h1>
+<h1>Créer Utilisateur</h1>
+<%= form_for :utilisateur do |f| %>
+    <% if @utilisateur && @utilisateur.errors.any? %>
+      <h2><%= pluralize(@utilisateur.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+      <ul>
+        <% @utilisateur.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
+    <%= f.hidden_field :id %>
+      Nom : <%= f.text_field :nom %><br />
+      Mot de passe : <%= f.password_field :password, disabled: true %><br />
+      <label>Droit de l'utilisateur</label>
+      <%= collection_select :utilisateur, :droit_id, @droits, :id, :role %>
+<%= f.submit %>
+<% end %>
+<!--
 <%= form_tag "/user/edit", method: :post do %>
 <input type="hidden" value="<%=@utilisateur.id%>" name="id"/>
 <p>
@@ -20,5 +38,5 @@
       <% end %>
   </select </p>
   <input type="submit" value="Valider"/>
-<% end %>
+<% end %>-->
 </p>
