@@ -5,6 +5,7 @@
     <h2>Créer utilisateur
     </h2>
 <%= flash[:notice] %>
+
 <%= form_for :utilisateur do |f| %>
     <% if @utilisateur && @utilisateur.errors.any? %>
       <h2><%= pluralize(@utilisateur.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
@@ -17,40 +18,12 @@
     <% end %>
       Nom : <%= f.text_field :nom %><br />
       Mot de passe : <%= f.password_field :password %><br />
+      Confirmez le mot de passe : <%= f.password_field :password_confirmation %><br />
       <label>Droit de l'utilisateur</label>
-      <%= collection_select :utilisateur, :droit_id, @droits, :id, :role %>
+      <%= collection_select :utilisateur, :droit_id, @droits, :id, :role %><br />
 <%= f.submit %>
 <% end %>
 
-<!--
-    <p>
-      <%= form_tag "/user/create", method: :post do %>
-      <p>
-        <label>Nom de l'utilisateur :
-        </label>
-        <input type="text" name="nom"/>
-      </p>
-      <p>
-        <label>Mot de passe de l'utilisateur :</label>
-        <input type="password" name="password" />
-        <p>
-          <label>Droit de l'utilisateur</label>
-          <select name="role">
-            <% @droits.each do |droit| %>
-              <% if droit.role == "utilisateur" %>
-                <option value="<%=droit.id%>" selected="selected"><%=droit.role%></option>
-              <% else %>
-                <option value="<%=droit.id%>"><%=droit.role%></option>
-              <% end %>
-            <% end %>
-          </select>
-        </p>
-
-        <input type="submit" value="Valider"/>
-      <% end %>
-
-    </p>
--->
     <table class="table table-hover">
       <tr>
         <th>Id</th>

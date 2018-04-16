@@ -1,2 +1,0 @@
-module DroitHelper
-end

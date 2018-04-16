@@ -8,21 +8,6 @@ class UserController < ApplicationController
     end
   end
 
-=begin  def create
-    @current_user = get_current_user
-    if check_password_security
-      @utilisateur = Utilisateurs.new
-      @utilisateur.nom = params[:nom]
-      @utilisateur.password = params[:password]
-      @utilisateur.droit_id = Droit.find(params[:role]).id
-      @utilisateur.save
-      time = Time.now
-      $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, new user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}, role : #{Droit.find(@utilisateur.droit_id).role}}"
-    end
-    render :file => "user/index.html.erb",layout: "layouts/application.html.erb"
-    #redirect_to user_path
-  end
-=end
   def create
     get_current_user
 
@@ -31,11 +16,6 @@ class UserController < ApplicationController
       if @utilisateur.save
         time = Time.now
         $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, new user : { id: #{@utilisateur.id}, droit : #{Droit.find(@utilisateur.droit_id).role}}"
-        flash[:notice] = "Utilisateur ajoutée avec succès"
-        flash[:color] = "valid"
-      else
-        flash[:notice] = "L'utilisateur n'a pas pu être ajoutée : Paramètres incorrects"
-        flash[:color] = "invalid"
       end
       render :file => "user/index.html.erb",layout: "layouts/application.html.erb"
     end
