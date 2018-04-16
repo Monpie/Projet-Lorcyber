@@ -18,10 +18,10 @@
       <% end %>
 
         Nom : <%= f.text_field :nom_societe %><br />
-      Référent : <%= f.text_field :referent %><br />
-      Mail : <%= f.email_field :mail %><br />
-      Adresse : <%= f.text_area(:adresse, size:"50x6") %><br />
-      Tel : <%= f.telephone_field :telephone %><br />
+        Référent : <%= f.text_field :referent %><br />
+        Mail : <%= f.text_field :mail %><br />
+        Adresse : <%= f.text_area :adresse %><br />
+        Tel : <%= f.text_field :telephone %><br />
 
   <%= f.submit %>
       <% end %>
