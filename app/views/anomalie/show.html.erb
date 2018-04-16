@@ -21,6 +21,24 @@
   <p> test </p>
   <% end %>
   <% else %>
+
+  <%= form_for :anomalie do |f| %>
+      <% if @anomalie && @anomalie.errors.any? %>
+        <h2><%= pluralize(@anomalie.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+        <ul>
+          <% @anomalie.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
+        Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
+        <label>Alerte réel?</label>
+      <%=  f.select :real_alerte, [['Oui', 1], ['Non', 2], ['Undefined', 3]]%>
+  <%= f.submit %>
+<% end %>
+
+<!--
 <%= form_tag "/anomalie/show", method: :post do %>
   <p>
     <input type="hidden" name="id" value="<%=@anomalie.id%>"/>
@@ -40,5 +58,5 @@
   </p>
   <input type="submit" value="Valider" />
 <% end %>
-
+-->
 <% end %>
