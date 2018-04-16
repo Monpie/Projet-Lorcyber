@@ -42,7 +42,30 @@
       <%=@anomalie.date%>
     </p>
       <p>Description de l'anomalie : <%=@anomalie.descriptif%></p>
-      <%= form_tag "/plan/create", method: :post do %>
+
+      <%= form_for :plan do |f| %>
+          <% if @plan && @plan.errors.any? %>
+            <h2><%= pluralize(@plan.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+            <ul>
+              <% @plan.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+            </div>
+          <% end %>
+          <%= f.hidden_field :anomaly_id, value: @anomalie.id%>
+            Descriptif : <%=f.text_area(:descriptif, size:"50x4", value:@anomalie.descriptif)%><br />
+            Actions à mener : <%=f.text_area :liste_action, size:"50x4"%>
+            <br>
+            <%=flash[:date_error]%>
+            Date limite : <%= f.date_field :temps %>
+            <br>
+            Priorité de traitement : <%=  f.select :priorite, [['Urgent', 'Urgent'], ['Très urgent', 'Très urgent'], ['Non urgent', 'Non urgent']]%>
+            <br>
+          <%= f.submit %>
+      <% end %>
+
+    <!--  <%= form_tag "/plan/create", method: :post do %>
       <p>
         <label for="descriptif">Descriptif du problème (Peut-être différent de celle de l'incident) :</label>
         <br>
@@ -69,7 +92,7 @@
       <input type="submit" value="Générer"/>
     <% end %>
   <%= link_to 'Générer', plan_show_url<<"?id=#{@anomalie.id}" %>
-
+-->
     <% end %>
   <% end %>
 <% end %>

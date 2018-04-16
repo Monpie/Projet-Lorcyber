@@ -15,7 +15,7 @@ class AnomalieController < ApplicationController
       @anomalie.date = Time.now
       if @anomalie.save
         time = Time.now
-        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, new anomalie : { id: #{@anomalie.id}}"
       end
       render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
     end
@@ -81,6 +81,31 @@ class AnomalieController < ApplicationController
   def alerte
     @current_user = get_current_user
     time = Time.now
+    if check_access "admin"
+      @anomalie = Anomalie.find(edit_anomalie_params[:id])
+      if @anomalie
+        case params[:real_alerte]
+        when "yes"
+          @anomalie.statut = "Incident"
+          if @anomalie.update(edit_anomalie_params)
+            $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, edit_alerte : { id : #{@anomalie.id}, statut : #{@anomalie.statut}}"
+          end
+        when "no"
+          @anomalie.statut = "Fausse Alerte"
+          if @anomalie.save
+            $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, edit_alerte : { id : #{@anomalie.id}, statut : #{@anomalie.statut}}"
+          end
+        when "und"
+          @anomalie.statut = "Undefined"
+          if @anomalie.save
+            $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, edit_alerte : { id : #{@anomalie.id}, statut : #{@anomalie.statut}}"
+          end
+        end
+      end
+      render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
+    end
+=begin    @current_user = get_current_user
+    time = Time.now
     if params[:realAlerte] ==  "no"
       @anomalie = Anomalie.find(params[:id])
       @anomalie.statut = "Fausse alerte"
@@ -98,6 +123,7 @@ class AnomalieController < ApplicationController
       render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
       #redirect_to anomalie_path
     end
+=end
   end
 
   private
@@ -126,6 +152,6 @@ class AnomalieController < ApplicationController
   end
 
   def edit_anomalie_params
-    params.require(:anomalie).permit(:id, :alerte_type, :real_alerte)
+    params.require(:anomalie).permit(:id, :alerte_type)
   end
 end

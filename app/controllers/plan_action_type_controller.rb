@@ -59,6 +59,35 @@ class PlanActionTypeController < ApplicationController
     end
   end
 
+  def  create
+    @current_user = get_current_user
+    @anomalie = Anomalie.find(plan_params[:anomaly_id])
+    if check_access "admin"
+      date = plan_params[:temps].to_date
+      now = Date.today
+      #unless date.nil?
+        if date && ((date.day < now.day && date.month <= now.month && date.year <= now.year) || (date.month < now.month && date.year <= now.year) || (date.year < now.year))
+          flash[:date_error] = "Veuillez saisir une date correcte !"
+          redirect_to plan_path<<"?id=#{@anomalie.id}"
+        else
+          @plan = PlanActionType.new(plan_params)
+          @plan.incident_type = @anomalie.alerte_type
+            if @plan.save
+              time = Time.now
+              $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, generate plan : { id: #{@plan.id}, anomlie_id : #{@plan.anomaly_id}}"
+              redirect_to plan_path
+            else
+              render "plan_action_type/index.html.erb", layout: "layouts/application.html.erb"
+              #redirect_to plan_path<<"?id=#{@anomalie.id}"
+            end
+          end
+      #  else
+      #    flash[:date_error] = "Veuillez saisir une date !"
+      #    render "plan_action_type/index.html.erb", layout: "layouts/application.html.erb"
+      #  end
+      end
+  end
+=begin
   def create
     @current_user = get_current_user
     @anomalie = Anomalie.find(params[:anomalie_id])
@@ -82,7 +111,7 @@ class PlanActionTypeController < ApplicationController
       redirect_to plan_path<<"?id=#{@anomalie.id}"
     end
   end
-
+=end
   private
   def get_current_user
     if session[:user_id]
@@ -101,6 +130,10 @@ class PlanActionTypeController < ApplicationController
       end
     end
     return bool
+  end
+
+  def plan_params
+    params.require(:plan).permit(:id, :descriptif, :liste_action, :temps, :priorite, :anomaly_id)
   end
 
 end

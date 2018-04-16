@@ -17,7 +17,7 @@
 
 <% unless @anomalie.alerte_type.nil? %>
   <p><%=plan_type = PlanActionTypeController.new.generate(@anomalie.alerte_type)%></p>
-  <% if plan_type == "Type = phishing" %>
+  <% if plan_type == "Type != nil" || plan_type == "Type != Undefined" %>
   <p> test </p>
   <% end %>
   <% else %>
@@ -32,10 +32,17 @@
         </ul>
         </div>
       <% end %>
+      <%= f.hidden_field :id%>
         Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
-        <label>Alerte réel?</label>
-      <%=  f.select :real_alerte, [['Oui', 1], ['Non', 2], ['Undefined', 3]]%>
-  <%= f.submit %>
+        <label>Alerte réelle?</label>
+        <select name="real_alerte">
+          <option value="yes">Oui</option>
+          <option value="no">Non</option>
+          <option value="und">Undefined</option>
+        </select>
+        <label>Type de l'alerte</label>
+      <%=  f.select :alerte_type, [['DDOS', 'DDOS'], ['Phishing', 'Phishing'], ['Undefined', 'Undefined']]%>
+      <%= f.submit %>
 <% end %>
 
 <!--
