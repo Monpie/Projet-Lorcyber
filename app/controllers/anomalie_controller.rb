@@ -124,4 +124,8 @@ class AnomalieController < ApplicationController
   def anomalie_params
     params.require(:anomalie).permit(:id, :descriptif, :societe_id)
   end
+
+  def edit_anomalie_params
+    params.require(:anomalie).permit(:id, :alerte_type, :real_alerte)
+  end
 end
