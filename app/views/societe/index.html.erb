@@ -4,7 +4,9 @@
     <h1>Page Societe</h1>
 
     <h1>Créer société</h1>
-
+<%= flash[:societe_form_info] %>
+<%= flash[:info]%>
+<%= flash[:save_value]%>
       <%= form_for :societe do |f| %>
 
       <% if @societe && @societe.errors.any? %>

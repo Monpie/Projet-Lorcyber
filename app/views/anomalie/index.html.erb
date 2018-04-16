@@ -1,0 +1,71 @@
+<%= stylesheet_link_tag 'anomalie' %>
+<% if @current_user %>
+
+<% if Droit.find(@current_user.droit_id).role == "admin" %>
+<h1>Page Anomalie</h1>
+<h2>Créer anomalie</h2>
+<div><%= flash[:info] %></div>
+<br>
+
+<%= form_for :anomalie do |f| %>
+    <% if @anomalie && @anomalie.errors.any? %>
+      <h2><%= pluralize(@anomalie.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+      <ul>
+        <% @anomalie.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      </div>
+    <% end %>
+      Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
+      <label>Droit de l'utilisateur</label>
+      <%= collection_select :anomalie, :societe_id, @societes, :id, :nom_societe %>
+<%= f.submit %>
+<% end %>
+
+    <h2>Liste anomalies</h2>
+  <table class="table table-hover">
+    <tr>
+      <th>Id</th>
+      <th>Statut</th>
+      <th>Type</th>
+      <th>Société</th>
+      <th>Descriptif</th>
+      <th>Date</th>
+    </tr>
+    <% @anomalies.each do |anomalie| %>
+    <tr>
+      <td><%= anomalie.id %></td>
+      <td><%= anomalie.statut %></td>
+      <td><%= anomalie.alerte_type %></td>
+      <td><%= Societe.find(anomalie.societe_id).nom_societe %></td>
+      <td><%= anomalie.descriptif %></td>
+      <td><%= anomalie.date %></td>
+      <td>
+        <% if anomalie.statut == "Incident" %>
+        <a href="/plan?id=<%=anomalie.id%>"><button>Editer plan action</button></a>
+
+        <% else %>
+        <a href="/anomalie/show?id=<%=anomalie.id%>">
+          <button>edit</button>
+        </a>
+        <% end %>
+      </td>
+      <td>
+        <a href="/anomalie/delete?id=<%=anomalie.id%>">x</a>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+  <%= link_to 'Back', welcome_index_path %>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% else %>
+  <p>Vous n'avez pas les droits pour accéder à cette page</p>
+  <%= link_to 'Accueil', welcome_index_path %>
+  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <% end %>
+  <% else %>
+  <p>Vous n'êtes pas connecté, veuillez vous connecter</p>
+  <%= link_to 'Accueil', welcome_index_path %>
+  <% end %>

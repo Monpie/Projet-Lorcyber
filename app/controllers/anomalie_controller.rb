@@ -9,8 +9,19 @@ class AnomalieController < ApplicationController
 
   def create
     @current_user = get_current_user
+    if check_access "admin"
+      @anomalie = Anomalie.new(anomalie_params)
+      @anomalie.statut = "Alerte"
+      @anomalie.date = Time.now
+      if @anomalie.save
+        time = Time.now
+        $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, detected : { id: #{@anomalie.id}}"
+      end
+      render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
+    end
 
-    if @current_user
+
+=begin    if @current_user
       if check_access "admin"
         @anomalie = Anomalie.new
         @anomalie.statut = "Alerte"
@@ -24,6 +35,7 @@ class AnomalieController < ApplicationController
     end
     render :file => "anomalie/index.html.erb",layout: "layouts/application.html.erb"
     #redirect_to anomalie_path
+=end
   end
 
   def index
@@ -107,5 +119,9 @@ class AnomalieController < ApplicationController
       end
     end
     return bool
+  end
+
+  def anomalie_params
+    params.require(:anomalie).permit(:id, :descriptif, :societe_id)
   end
 end
