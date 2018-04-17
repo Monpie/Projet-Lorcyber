@@ -1,15 +1,11 @@
-<% unless @current_user %>
-  <% @types.each do |t| %>
-    <p>
-      type =<%=t%>
-    </p>
-  <% end %>
-<% end %>
-<%= flash[:info] %>
-<%= flash[:auth_error]%>
+<%= stylesheet_link_tag 'plan_action_type' %>
+
+<% if @current_user %>
 <% if Droit.find(@current_user.droit_id).role  == "admin"%>
   <% unless @anomalie %>
-    <h1>Tous les plans d'actions</h1>
+    <h1>TABLEAU DE BORD DES PLANS D'ACTION</h1>
+
+    <div class="line"></div>
     <table class="table table-hover">
       <tr>
         <th>Id</th>
@@ -30,10 +26,15 @@
       </tr>
     <% end %>
   </table>
+
   <% else %>
-    <h1>Plan d'action à effectuer</h1>
+
+    <h1>ACTIONS A METTRE EN PLACE</h1>
+
+    <div class="line"></div>
+    <%= link_to '<<< Retour', anomalie_path %>
     <% if  @types.include? @anomalie.alerte_type %>
-      <p>Type :<%=@anomalie.alerte_type%></p>
+      <p>Type : <%=@anomalie.alerte_type%></p>
       <p>Date de l'anomalie : <%=@anomalie.date%></p>
       <p>Date avant laquelle l'anomalie doit être traité :
       <%7.times do%>
@@ -54,45 +55,21 @@
             </div>
           <% end %>
           <%= f.hidden_field :anomaly_id, value: @anomalie.id%>
-            Descriptif : <%=f.text_area(:descriptif, size:"50x4", value:@anomalie.descriptif)%><br />
-            Actions à mener : <%=f.text_area :liste_action, size:"50x4"%>
-            <br>
+            Descriptif :<br /> <%=f.text_area(:descriptif, size:"50x4", value:@anomalie.descriptif)%><br /><br />
+            Actions à mener : <br /><%=f.text_area :liste_action, size:"50x4"%><br /><br />
             <%=flash[:date_error]%>
-            Date limite : <%= f.date_field :temps %>
-            <br>
-            Priorité de traitement : <%=  f.select :priorite, [['Urgent', 'Urgent'], ['Très urgent', 'Très urgent'], ['Non urgent', 'Non urgent']]%>
-            <br>
+            Date limite : <%= f.date_field :temps %><br /><br />
+            Priorité de traitement : <%=  f.select :priorite, [['Urgent', 'Urgent'], ['Très urgent', 'Très urgent'], ['Non urgent', 'Non urgent']]%><br /><br />
           <%= f.submit %>
       <% end %>
 
-    <!--  <%= form_tag "/plan/create", method: :post do %>
-      <p>
-        <label for="descriptif">Descriptif du problème (Peut-être différent de celle de l'incident) :</label>
-        <br>
-        <textarea name="descriptif" cols="50" rows="5" value="<%=@anomalie.descriptif%>"><%=@anomalie.descriptif%></textarea>
-      </p>
-      <p>
-        <label for="actions">Actions à mener : </label>
-        <textarea name="actions"></textarea>
-      </p>
-      <input type="hidden" name="anomalie_id" value="<%=@anomalie.id%>"/>
-      <%= flash[:date_error]%>
-      <p>
-        <label>Date limite</label>
-        <input type="date" name="date"/>
-      </p>
-      <p>
-        <label>Priorité de traitement :</label>
-        <select name="priorite">
-          <option value="Très urgent">Très urgent</option>
-          <option value="Urgent" selected>Urgent</option>
-          <option value="Non urgent">Non urgent</option>
-        </select>
-      </p>
-      <input type="submit" value="Générer"/>
     <% end %>
   <%= link_to 'Générer', plan_show_url<<"?id=#{@anomalie.id}" %>
--->
     <% end %>
-  <% end %>
+<% else %>
+  <p>Vous n'avez pas les droits pour accéder à cette page</p>
+<% end %>
+<% else %>
+<p>Vous n'êtes pas connecté, veuillez vous connecter</p>
+<%= link_to 'Accueil', welcome_index_path %>
 <% end %>

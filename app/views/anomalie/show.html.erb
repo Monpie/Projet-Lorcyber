@@ -1,4 +1,7 @@
-<h1>Test</h1>
+<%= stylesheet_link_tag 'anomalie' %>
+<h1>EDITION DE L'ANOMALIE</h1>
+<%= link_to 'Annuler', anomalie_path %>
+<div class="line"></div>
 <p>
 <label>Statut de l'anomalie : </label>
   <%= @anomalie.statut %>
@@ -33,37 +36,17 @@
         </div>
       <% end %>
       <%= f.hidden_field :id%>
-        Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
-        <label>Alerte réelle?</label>
+        Descriptif : <br /><%=f.text_area(:descriptif, size:"50x6")%><br /><br />
+        <label>Alerte réelle ?</label>
         <select name="real_alerte">
           <option value="yes">Oui</option>
           <option value="no">Non</option>
           <option value="und">Undefined</option>
-        </select>
+        </select><br /><br />
         <label>Type de l'alerte</label>
       <%=  f.select :alerte_type, [['DDOS', 'DDOS'], ['Phishing', 'Phishing'], ['Undefined', 'Undefined']]%>
-      <%= f.submit %>
+    <br /><br /><br />
+    <%= f.submit %>
 <% end %>
 
-<!--
-<%= form_tag "/anomalie/show", method: :post do %>
-  <p>
-    <input type="hidden" name="id" value="<%=@anomalie.id%>"/>
-  <label>Alertes réelles? </label>
-  <select name="realAlerte">
-    <option value="yes">Oui</option>
-    <option value="no">Non</option>
-  </select>
-  </p>
-
-  <p>
-    <label>Type de l'alerte : </label>
-    <select name="type">
-      <option value="phishing">Phishing</option>
-      <option value="ddos">DDOS</option>
-    </select>
-  </p>
-  <input type="submit" value="Valider" />
-<% end %>
--->
 <% end %>

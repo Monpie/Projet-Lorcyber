@@ -1,10 +1,10 @@
+<%= stylesheet_link_tag 'user' %>
 <% if @current_user %>
   <% if Droit.find(@current_user.droit_id).role == "admin"  %>
-    <h1>Pages users
-    </h1>
-    <h2>Créer utilisateur
-    </h2>
-<%= flash[:notice] %>
+    <h1>GESTION DES UTILISATEURS</h1>
+    <div class="line"></div>
+
+    <h2>Créer utilisateur</h2>
 
 <%= form_for :utilisateur do |f| %>
     <% if @utilisateur && @utilisateur.errors.any? %>
@@ -14,16 +14,17 @@
           <li><%= msg %></li>
         <% end %>
       </ul>
-      </div>
     <% end %>
-      Nom : <%= f.text_field :nom %><br />
-      Mot de passe : <%= f.password_field :password %><br />
-      Confirmez le mot de passe : <%= f.password_field :password_confirmation %><br />
+      Nom : <br /><%= f.text_field :nom %><br /><br />
+      Mot de passe : <br /><%= f.password_field :password %><br /><br />
+      Confirmez le mot de passe : <br /><%= f.password_field :password_confirmation %><br /><br />
       <label>Droit de l'utilisateur</label>
-      <%= collection_select :utilisateur, :droit_id, @droits, :id, :role %><br />
+      <%= collection_select :utilisateur, :droit_id, @droits, :id, :role %><br /><br />
 <%= f.submit %>
 <% end %>
-
+    <div><%= flash[:info] %></div>
+    <div class="line"></div>
+    <h2>Liste des utilisateurs</h2>
     <table class="table table-hover">
       <tr>
         <th>Id</th>

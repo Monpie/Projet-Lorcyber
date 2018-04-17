@@ -1,33 +1,61 @@
 <%= stylesheet_link_tag 'welcome' %>
+<%= stylesheet_link_tag 'application' %>
 
-<h1>Bienvenue sur le site Lorcyber</h1>
-<h1>Connexion</h1>
 <% if @current_user %>
-  <p>Bienvenue <%= @current_user.nom %> !</p>
-  <h2>Panneau d'administration</h2>
-<p>
-  <%= link_to 'Anomalie', anomalie_path %>
-</p>
-  <%= link_to 'Societe', societe_path %>
-  <br>
 
-  <% if Droit.find(@current_user.droit_id).role == "admin" %>
+  <h1>LORCYBER : LA MAITRISE DE LA CYBERSECURITE AU SERVICE DES ENTREPRISES</h1>
+
+  <div class="line"></div>
+
+  <h2>LES PME ET LES COLLECTIVITÉS TERRITORIALES SONT AUJOURD’HUI POUR LA PLUPART LIVRÉES À ELLES-MÊMES</h2>
   <p>
-    <%= link_to 'Gérer les utilisateurs', user_path %>
+   dans un monde où Internet est indispensable à leur activité. Peu de RSSI1 ou de DPO2; et quasiment jamais d’équipe dédiée à la sécurité.
+
+  LORCYBER se veut votre partenaire, pour prendre en charge tout ou partie de la conception, du suivi et du contrôle CyberSécurité.
+
+  L’objectif est de fournir un service de qualité, à la pointe de la technologie et à un coût supportable.
+
+  LORCYBER veut transformer les coûts sécurité en avantages concurrentiels et garantir un retour à la normale le plus rapide possible en cas d’incidents de sécurité.
   </p>
-  <% end %>
-  <p>
-  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
+  <div class="line"></div>
+  <h2>Ethique, Confiance, Partenariat</h2>
+<p>
+  L’équipe est constituée d’anciens collaborateurs de fonctions sécurité de grands groupes français, offrant ainsi un ensemble de compétences éprouvées du monde de la sécurité.
+
+  Notre ambition collective est de prendre en charge de manière mutualisée la sécurité des PME et des collectivités territoriales en leur délivrant la maturité sécurité que nous avons acquise afin d’en assurer la résilience.
+
+  Pour ce faire, nous mettons en œuvre un SI performant, fusion des meilleurs outils du marché et de développements internes ou associés à un programme de recherche.
 </p>
+  <br />
+  <br/>
+  <div class="line"></div>
+  <p>Connecté en tant que <%= @current_user.nom %> !</p>
 <% else %>
-  <h1>Bienvenue visiteur anonyme !</h1>
+
+
+
   <%= form_tag "/welcome/index", method: :post do %>
-    <h2>Connectez-vous</h2>
-    <p><label for="Login">Login : </label>
-      <input type="text" name="name" /></p>
-    <p><label for="Password">Password : </label>
-      <input type="password" name="password" /></p>
-    <input type="submit" value="Se connecter" />
+    <section class="login-page">
+      <div class="form">
+        <a class="navbar-brand"><%= image_tag "logo.png", alt: "Logo" %></a>
+        <br />
+        <h2>Connectez-vous</h2>
+        <br />
+        <p><label for="Login">Login : </label>
+          <input type="text" name="name"/></p>
+        <p><label for="Password">Password : </label>
+          <input type="password" name="password"/></p>
+        <input type="submit" class="btn" value="Se connecter"/>
+        <br/>
+        <p><%= flash[:info] %></p>
   <% end %>
-  <p><%= flash[:info] %></p>
+  </div>
+  </section>
 <% end %>
+
+
+
+
+
+
+

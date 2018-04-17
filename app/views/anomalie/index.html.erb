@@ -2,27 +2,29 @@
 <% if @current_user %>
 
 <% if Droit.find(@current_user.droit_id).role == "admin" %>
-<h1>Page Anomalie</h1>
-<h2>Créer anomalie</h2>
+<h1>GESTION DES ANOMALIES</h1>
+
+    <div class="line"></div>
+    <h2>Créer anomalie</h2>
+    <%= form_for :anomalie do |f| %>
+      <% if @anomalie && @anomalie.errors.any? %>
+        <h2><%= pluralize(@anomalie.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
+        <ul>
+          <% @anomalie.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <br />
+      Descriptif : <br /><%=f.text_area(:descriptif, size:"50x6")%><br /><br />
+      <label>Droit de l'utilisateur</label>
+      <%= collection_select :anomalie, :societe_id, @societes, :id, :nom_societe %><br /><br />
+      <%= f.submit %>
+
+    <% end %>
 <div><%= flash[:info] %></div>
 <br>
-
-<%= form_for :anomalie do |f| %>
-    <% if @anomalie && @anomalie.errors.any? %>
-      <h2><%= pluralize(@anomalie.errors.count, "erreurs") %> empêchent l'enregistrement de la société</h2>
-      <ul>
-        <% @anomalie.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-      </div>
-    <% end %>
-      Descriptif : <%=f.text_area(:descriptif, size:"50x6")%><br />
-      <label>Droit de l'utilisateur</label>
-      <%= collection_select :anomalie, :societe_id, @societes, :id, :nom_societe %>
-<%= f.submit %>
-<% end %>
-
+<div class="line"></div>
     <h2>Liste anomalies</h2>
   <table class="table table-hover">
     <tr>
@@ -59,8 +61,6 @@
   </table>
   <% else %>
   <p>Vous n'avez pas les droits pour accéder à cette page</p>
-  <%= link_to 'Accueil', welcome_index_path %>
-  <%= link_to 'Deconnexion', welcome_deconnexion_url %>
   <% end %>
   <% else %>
   <p>Vous n'êtes pas connecté, veuillez vous connecter</p>

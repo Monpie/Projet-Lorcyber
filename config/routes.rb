@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'welcome#index'
-
   get 'welcome/deconnexion', to: 'welcome#deconnexion'
 
   get 'anomalie', to: 'anomalie#index'

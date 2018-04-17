@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag 'plan_action_type' %>
 <h1>Page show</h1>
 <%= flash[:test] %>
 <% if @anomalie %>
@@ -9,13 +10,13 @@
     <p>Date avant laquelle l'anomalie doit être traité :
       <%7.times do%>
         <% @anomalie.date = @anomalie.date.next_day%><% end%>
-        <%=@anomalie.date%>
-      </p>
-      <p>Description de l'anomalie :
-        <%=@anomalie.descriptif%></p>
-    <% end %>
+      <%=@anomalie.date%>
+    </p>
+    <p>Description de l'anomalie :
+      <%=@anomalie.descriptif%></p>
+  <% end %>
 
-    <%= form_tag "/plan/create", method: :post do %>
+  <%= form_tag "/plan/create", method: :post do %>
     <input type="hidden" name="anomalie_id" value="<%=@anomalie.id%>"/>
     <input type="submit" value="Générer"/>
   <% end %>
