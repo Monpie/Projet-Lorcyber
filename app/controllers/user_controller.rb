@@ -84,12 +84,17 @@ class UserController < ApplicationController
         unless last_admin?(@utilisateur)
           @utilisateur.delete
           $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, user : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}}"
+          if @utilisateur == @current_user
+            redirect_to welcome_deconnexion_url
+          else
+            redirect_to user_path
+          end
         else
           $LOG.write "[#{Time.utc time.year, time.month, time.day, time.hour, time.min, time.sec}] user : #{@current_user.nom}, ip : #{request.remote_ip}, route : #{request.fullpath}, tried to delete last admin : {id: #{@utilisateur.id}, name : #{@utilisateur.nom}}"
+          redirect_to user_path
         end
       end
     end
-    redirect_to user_path
   end
 
 

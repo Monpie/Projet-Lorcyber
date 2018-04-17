@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413201052) do
+ActiveRecord::Schema.define(version: 20180417113946) do
 
   create_table "actions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.datetime "date"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20180413201052) do
   end
 
   create_table "plan_action_types", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "type"
+    t.string "incident_type"
     t.text "descriptif"
     t.string "liste_action"
     t.datetime "temps"

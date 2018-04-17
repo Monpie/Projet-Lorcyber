@@ -10,6 +10,8 @@ class WelcomeController < ApplicationController
     if session[:user_id]
       @current_user = Utilisateurs.find(session[:user_id])
       render layout: "layouts/application.html.erb"
+    else
+      render welcome_index_path,layout: "layouts/application.html.erb"
     end
   end
 
